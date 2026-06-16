@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand */
+  --color-primary:       #21592D;   /* Brand green — logo, icons, links, accents */
+  --color-primary-light: #EBF5EE;   /* Light green — hover states, badges, chips */
+
+  /* Text */
+  --color-text-dark:     #1A1A1A;   /* Headings, strong body text */
+  --color-text-muted:    #555555;   /* Body copy, descriptions, sub-labels */
+
+  /* Backgrounds */
+  --color-bg-page:       #F7F7F5;   /* Page / section alternating background */
+  --color-bg-white:      #FFFFFF;   /* Cards, modals, main sections */
+
+  /* Border */
+  --color-border:        #E0E0DC;   /* Dividers, card borders, input borders */
+
+  /* CTA */
+  --color-gold:          #C9960C;   /* ALL call-to-action buttons only */
+  --color-gold-hover:    #A87A08;   /* Gold button hover state */
+
+  /* Utility */
+  --color-black:         #1F2520;   /* Footer background, dark overlays */
+  --color-gray-mid:      #757A76;   /* Placeholder text, icon fills */
+  --color-gray-light:    #C1C2C1;   /* Skeleton, subtle borders */
+
+  /* Font */
+  --font-sans: 'Manrope', sans-serif;
+  --font-display: 'Manrope', sans-serif;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  /* Border Radius */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  --shadow-hover: 0 4px 24px rgba(33,89,45,0.12);
+  --shadow-nav:   0 1px 0 var(--color-border);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-dark);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F7F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C1C2C1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #757A76;
+}
+
+/* Custom classes for transitions */
+.transition-custom {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-effect:hover {
+  transform: translateY(-2px);
+  border-color: #21592D;
+  box-shadow: 0 4px 24px rgba(33,89,45,0.12);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
