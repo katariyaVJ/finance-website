@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Clock, CheckCircle2, Calendar, Mail, Award } from 'lucide-react';
-import SectionHeader from '../ui/SectionHeader';
-import FormInput from '../ui/FormInput';
-import Button from '../ui/Button';
+import SectionHeader from '../components/ui/SectionHeader';
+import FormInput from '../components/ui/FormInput';
+import Button from '../components/ui/Button';
 import Branches from '../components/sections/Branches';
 
 export default function Contact() {
