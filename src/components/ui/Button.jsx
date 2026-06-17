@@ -14,7 +14,7 @@ export default function Button({
   className = '',
   external = false
 }) {
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
     primary: 'bg-primary text-white hover:bg-[#1a4724] active:bg-[#153a1d] shadow-sm',

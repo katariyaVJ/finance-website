@@ -22,7 +22,7 @@ export default function ServicesTabs() {
     .slice(0, 6); // show up to 6 popular services
 
   return (
-    <section className="bg-white py-12 md:py-16">
+    <section className="bg-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeader
@@ -40,7 +40,7 @@ export default function ServicesTabs() {
               <button
                 key={tab.categoryId}
                 onClick={() => setActiveTab(tab.categoryId)}
-                className={`relative px-5 py-2.5 text-sm font-bold rounded-md transition-all duration-300 outline-none
+                className={`relative px-5 py-2.5 text-sm font-bold rounded-xl transition-all duration-300 outline-none
                   ${isActive ? 'text-primary bg-primary-light' : 'text-text-muted hover:text-primary hover:bg-primary-light/30'}`}
               >
                 {tab.label}
@@ -70,7 +70,7 @@ export default function ServicesTabs() {
               {filteredServices.map((service) => (
                 <div
                   key={service.slug}
-                  className="flex justify-between items-center p-5 bg-bg-page border border-border rounded-lg shadow-card hover:border-primary transition-all duration-200"
+                  className="flex justify-between items-center p-5 bg-bg-page border border-border/80 rounded-2xl shadow-card hover:border-primary transition-all duration-200"
                 >
                   <div className="flex items-center space-x-3 text-left">
                     <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />

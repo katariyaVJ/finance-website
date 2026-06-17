@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, HelpCircle, ShieldCheck } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
+import AccordionItem from '../ui/AccordionItem';
 
 const customFaqs = [
   {
@@ -34,7 +33,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="bg-white py-12 md:py-16 relative overflow-hidden">
+    <section className="bg-white py-16 md:py-24 relative overflow-hidden">
       {/* Decorative backdrops */}
       <div className="absolute right-0 bottom-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute left-0 top-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
@@ -49,45 +48,15 @@ export default function FAQSection() {
         />
 
         <div className="space-y-4 mt-8">
-          {customFaqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div
-                key={index}
-                className="bg-bg-page/40 hover:bg-bg-page/70 rounded-2xl p-5 transition-all duration-300 select-none cursor-pointer"
-                onClick={() => handleToggle(index)}
-              >
-                <div className="flex items-center justify-between w-full text-left">
-                  <span className="font-extrabold text-text-dark text-sm sm:text-base leading-snug pr-4">
-                    {faq.question}
-                  </span>
-                  <div className="p-1 rounded-lg bg-white shadow-sm flex-shrink-0 text-primary">
-                    <ChevronDown className={`h-4.5 w-4.5 transition-transform duration-300 ${isOpen ? 'rotate-180 text-gold' : ''}`} />
-                  </div>
-                </div>
-
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: 'easeInOut' }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pt-4 text-xs sm:text-sm text-text-muted leading-relaxed font-medium">
-                        <div className="flex items-center space-x-1.5 text-xs text-primary font-bold mb-2">
-                          <ShieldCheck className="h-4 w-4" />
-                          <span>Expert CA Verified Answer</span>
-                        </div>
-                        <p className="whitespace-pre-line">{faq.answer}</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+          {customFaqs.map((faq, index) => (
+            <AccordionItem
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onClick={() => handleToggle(index)}
+            />
+          ))}
         </div>
 
       </div>

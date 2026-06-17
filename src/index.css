@@ -84,16 +84,26 @@ body {
 
 /* Custom classes for transitions */
 .transition-custom {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-hover-effect {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .card-hover-effect:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   border-color: #21592D;
-  box-shadow: 0 4px 24px rgba(33,89,45,0.12);
+  box-shadow: 0 12px 32px -8px rgba(33, 89, 45, 0.16), 0 4px 12px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Premium smooth reveal animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Hide scrollbar utility */
@@ -104,3 +114,4 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+

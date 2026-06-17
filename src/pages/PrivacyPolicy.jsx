@@ -83,7 +83,7 @@ export default function PrivacyPolicy() {
           </div>
 
           {/* Compliance Badge Callout */}
-          <div className="p-5 bg-primary-light/50 border border-primary/20 rounded-md flex items-start space-x-3.5">
+          <div className="p-5 bg-primary-light/50 border border-primary/20 rounded-2xl flex items-start space-x-3.5">
             <Lock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
             <div className="text-left text-xs md:text-sm">
               <h4 className="font-bold text-text-dark">Government Portal Submissions</h4>

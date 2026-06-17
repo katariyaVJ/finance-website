@@ -161,13 +161,13 @@ export default function Footer() {
               
               {/* Helplines (2 lines only) */}
               <div className="space-y-1.5">
-                <span className="text-[11px] font-bold text-white/50 uppercase tracking-wider block">Support Hotline</span>
+                <span className="text-[11px] font-bold text-white/50 uppercase tracking-wider block mb-1">Support Hotline</span>
                 <div className="flex flex-col space-y-2 text-xs">
                   {['7600049383', '9662634363'].map((num, idx) => (
                     <a
                       key={idx}
                       href={`tel:${num}`}
-                      className="hover:text-gold transition-colors font-bold py-2 px-3 bg-white/5 hover:bg-white/10 rounded border border-white/5 flex items-center space-x-2"
+                      className="hover:text-gold transition-colors font-bold py-2 px-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 flex items-center space-x-2"
                     >
                       <Phone className="h-3.5 w-3.5 text-gold flex-shrink-0" />
                       <span>+91 {num.slice(0, 5)} {num.slice(5)}</span>

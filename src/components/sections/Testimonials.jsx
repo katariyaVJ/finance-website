@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
+import TestimonialCard from '../cards/TestimonialCard';
 import { testimonialsData } from '../../data/testimonials';
 
 export default function Testimonials() {
@@ -33,7 +34,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-white py-12 md:py-16 relative overflow-hidden">
+    <section className="bg-bg-page py-16 md:py-24 relative overflow-hidden">
       {/* Decorative glows */}
       <div className="absolute right-0 top-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute left-0 bottom-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
@@ -87,41 +88,15 @@ export default function Testimonials() {
               {testimonialsData.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="w-full lg:w-1/3 flex-shrink-0 px-3"
+                  className="w-full lg:w-1/3 flex-shrink-0 px-3 py-4"
                 >
-                  <div className="bg-bg-page/40 hover:bg-bg-page/70 rounded-2xl p-6 h-full flex flex-col justify-between text-left transition-all duration-300 select-none">
-                    <div>
-                      {/* Gold Star rating */}
-                      <div className="flex items-center space-x-1 mb-4 text-gold">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="h-4 w-4 fill-current text-gold"
-                          />
-                        ))}
-                      </div>
-
-                      {/* Quote text */}
-                      <p className="text-sm text-text-muted leading-relaxed italic mb-6">
-                        "{item.quote}"
-                      </p>
-                    </div>
-
-                    {/* Author Details Profile */}
-                    <div className="flex items-center space-x-3 pt-4 mt-auto">
-                      <div className="h-10 w-10 rounded-full bg-primary-light/80 text-primary flex items-center justify-center font-extrabold text-xs flex-shrink-0">
-                        {item.name.split(' ').map(n => n[0]).join('')}
-                      </div>
-                      <div className="min-w-0">
-                        <h4 className="font-extrabold text-text-dark text-xs sm:text-sm leading-tight truncate">
-                          {item.name}
-                        </h4>
-                        <p className="text-[10px] text-text-muted truncate mt-0.5">
-                          {item.business} · <span className="text-primary font-bold">{item.city}</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <TestimonialCard
+                    quote={item.quote}
+                    name={item.name}
+                    city={item.city}
+                    business={item.business}
+                    rating={5}
+                  />
                 </div>
               ))}
             </motion.div>

@@ -56,10 +56,10 @@ export default function About() {
 
             <div className="lg:col-span-5 flex justify-center">
               {/* Abstract Visual Box for Team Photo Placeholder */}
-              <div className="relative w-full max-w-[360px] aspect-[4/3] bg-white/5 border border-white/20 rounded-xl overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-2xl">
+              <div className="relative w-full max-w-[360px] aspect-[4/3] bg-white/5 border border-white/20 rounded-2xl overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-2xl">
                 <Users className="h-12 w-12 text-gold mb-3 stroke-[1.5]" />
-                <h3 className="font-bold text-white text-base">Authorized Advisory Firm</h3>
-                <p className="text-xs text-primary-light/80 mt-1">Surat · Ahmedabad · Vadodara · Ankleshwar</p>
+                <h3 className="font-extrabold text-white text-base tracking-tight font-display">Authorized Advisory Firm</h3>
+                <p className="text-xs text-primary-light/80 mt-1 font-semibold">Surat · Ahmedabad · Vadodara · Ankleshwar</p>
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent pointer-events-none" />
               </div>
             </div>
@@ -90,7 +90,7 @@ export default function About() {
             {/* Vision & Mission Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               
-              <div className="p-6 bg-bg-page border border-border rounded-lg shadow-card">
+              <div className="p-6 bg-bg-page border border-border/80 rounded-2xl shadow-card">
                 <Target className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-bold text-text-dark text-base mb-2">Our Mission</h3>
                 <p className="text-xs md:text-sm text-text-muted leading-relaxed">
@@ -98,7 +98,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="p-6 bg-bg-page border border-border rounded-lg shadow-card">
+              <div className="p-6 bg-bg-page border border-border/80 rounded-2xl shadow-card">
                 <Eye className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-bold text-text-dark text-base mb-2">Our Vision</h3>
                 <p className="text-xs md:text-sm text-text-muted leading-relaxed">
@@ -127,7 +127,7 @@ export default function About() {
             {teamRoles.map((role, i) => {
               const Icon = role.icon;
               return (
-                <div key={i} className="p-6 bg-white border border-border rounded-lg shadow-card text-center hover:border-primary transition-all duration-300">
+                <div key={i} className="p-6 bg-white border border-border/80 rounded-2xl shadow-card text-center hover:border-primary hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
                   <div className="inline-flex items-center justify-center p-3 bg-primary-light text-primary rounded-lg mb-4">
                     <Icon className="h-6 w-6" />
                   </div>
@@ -154,7 +154,7 @@ export default function About() {
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             {valueList.map((val, i) => (
-              <div key={i} className="flex space-x-3 items-start p-4 bg-bg-page border border-border rounded-lg">
+              <div key={i} className="flex space-x-3 items-start p-4 bg-bg-page border border-border/80 rounded-2xl">
                 <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <div className="text-left">
                   <h4 className="font-bold text-text-dark text-sm">{val.title}</h4>

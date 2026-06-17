@@ -15,10 +15,10 @@ export default function FormInput({
 }) {
   const isTextarea = type === 'textarea';
   
-  const inputBaseStyle = `w-full px-4 py-3 bg-white border rounded-md text-sm text-text-dark placeholder:text-gray-mid transition-all duration-200 outline-none
+  const inputBaseStyle = `w-full px-4 py-3 bg-white border rounded-xl text-sm text-text-dark placeholder:text-gray-mid transition-all duration-200 outline-none
     ${error 
       ? 'border-red-500 focus:border-red-500 focus:ring-4 focus:ring-red-500/10' 
-      : 'border-border focus:border-primary focus:ring-4 focus:ring-primary-light'
+      : 'border-border/85 focus:border-primary focus:ring-4 focus:ring-primary-light'
     }`;
 
   return (

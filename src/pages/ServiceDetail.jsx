@@ -138,7 +138,7 @@ export default function ServiceDetail() {
           <div className="lg:col-span-8 space-y-12">
             
             {/* Overview */}
-            <div className="bg-white border border-border p-6 md:p-8 rounded-lg shadow-card">
+            <div className="bg-white border border-border/80 p-6 md:p-8 rounded-2xl shadow-card">
               <h2 className="text-xl md:text-2xl font-bold text-text-dark pb-4 mb-6">
                 Overview of {service.name}
               </h2>
@@ -148,7 +148,7 @@ export default function ServiceDetail() {
             </div>
 
             {/* Who Needs It */}
-            <div className="bg-white border border-border p-6 md:p-8 rounded-lg shadow-card">
+            <div className="bg-white border border-border/80 p-6 md:p-8 rounded-2xl shadow-card">
               <h2 className="text-xl md:text-2xl font-bold text-text-dark pb-4 mb-6">
                 Who Needs this Service?
               </h2>
@@ -167,7 +167,7 @@ export default function ServiceDetail() {
             </div>
 
             {/* Documents Required */}
-            <div className="bg-white border border-border p-6 md:p-8 rounded-lg shadow-card">
+            <div className="bg-white border border-border/80 p-6 md:p-8 rounded-2xl shadow-card">
               <h2 className="text-xl md:text-2xl font-bold text-text-dark pb-4 mb-6">
                 Documents Required
               </h2>
@@ -176,7 +176,7 @@ export default function ServiceDetail() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {documentsFallback.map((doc, i) => (
-                  <div key={i} className="flex items-center space-x-3 p-3 bg-bg-page border border-border rounded-md">
+                  <div key={i} className="flex items-center space-x-3 p-3 bg-bg-page border border-border rounded-xl">
                     <FileText className="h-5 w-5 text-primary flex-shrink-0" />
                     <span className="text-sm text-text-dark font-semibold leading-tight">{doc}</span>
                   </div>
@@ -185,7 +185,7 @@ export default function ServiceDetail() {
             </div>
 
             {/* Process Steps Timeline */}
-            <div className="bg-white border border-border p-6 md:p-8 rounded-lg shadow-card">
+            <div className="bg-white border border-border/80 p-6 md:p-8 rounded-2xl shadow-card">
               <h2 className="text-xl md:text-2xl font-bold text-text-dark pb-4 mb-6">
                 Filing & Incorporation Process
               </h2>
@@ -207,7 +207,7 @@ export default function ServiceDetail() {
             </div>
 
             {/* Why choose HK */}
-            <div className="bg-white border border-border p-6 md:p-8 rounded-lg shadow-card">
+            <div className="bg-white border border-border/80 p-6 md:p-8 rounded-2xl shadow-card">
               <h3 className="text-lg md:text-xl font-bold text-text-dark mb-4">
                 Why Choose HK Finance for {service.name}?
               </h3>
@@ -236,7 +236,7 @@ export default function ServiceDetail() {
           <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
             
             {/* Quick Inquiry Card */}
-            <div className="bg-white border border-border p-6 rounded-lg shadow-card">
+            <div className="bg-white border border-border/80 p-6 rounded-2xl shadow-card">
               <h3 className="text-lg font-bold text-text-dark mb-2">
                 Enquire About This Service
               </h3>
@@ -290,7 +290,7 @@ export default function ServiceDetail() {
                       type="text"
                       readOnly
                       value={service.name}
-                      className="w-full px-4 py-3 bg-bg-page border border-border rounded-md text-xs text-text-muted outline-none cursor-not-allowed font-medium"
+                      className="w-full px-4 py-3 bg-bg-page border border-border rounded-xl text-xs text-text-muted outline-none cursor-not-allowed font-medium"
                     />
                   </div>
 
@@ -320,7 +320,7 @@ export default function ServiceDetail() {
             </div>
 
             {/* Helpline Card */}
-            <div className="p-6 bg-primary-light/50 border border-primary/20 rounded-lg text-center">
+            <div className="p-6 bg-primary-light/50 border border-primary/20 rounded-2xl text-center">
               <Phone className="h-6 w-6 text-primary mx-auto mb-2" />
               <h4 className="font-bold text-text-dark text-sm">Need Instant Support?</h4>
               <p className="text-xs text-text-muted mt-1 mb-4">

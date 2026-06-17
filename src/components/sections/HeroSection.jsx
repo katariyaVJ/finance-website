@@ -70,7 +70,7 @@ export default function HeroSection() {
             {/* Core Compliance Offerings List */}
             <motion.div 
               variants={itemVariants}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-2 pb-4 max-w-xl text-left"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pt-2 pb-4 max-w-xl text-left"
             >
               {[
                 "GST & Income Tax",
@@ -79,8 +79,8 @@ export default function HeroSection() {
                 "Licenses & Certifications",
                 "Legal & Revenue Documentation"
               ].map((item, idx) => (
-                <div key={idx} className="flex items-center space-x-2 text-sm md:text-base font-bold text-text-dark">
-                  <span className="text-primary text-base">➥</span>
+                <div key={idx} className="flex items-center space-x-2.5 text-sm md:text-base font-extrabold text-text-dark">
+                  <CheckCircle2 className="h-4.5 w-4.5 text-primary flex-shrink-0" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -92,7 +92,7 @@ export default function HeroSection() {
             >
               <Button 
                 label="Explore Services" 
-                variant="primary" 
+                variant="outline" 
                 size="lg" 
                 href="/services" 
                 icon={ArrowRight} 
@@ -108,22 +108,22 @@ export default function HeroSection() {
             {/* Trust Bar */}
             <motion.div 
               variants={itemVariants}
-              className="pt-6 mt-4 flex flex-wrap items-center gap-y-3 gap-x-6 text-xs md:text-sm font-semibold text-text-muted"
+              className="pt-6 mt-4 flex flex-wrap items-center gap-y-3 gap-x-6 text-xs md:text-sm font-bold text-text-muted"
             >
               <div className="flex items-center space-x-1.5">
-                <CheckCircle2 className="h-4.5 w-4.5 text-primary" />
+                <CheckCircle2 className="h-4.5 w-4.5 text-primary flex-shrink-0" />
                 <span>5000+ Clients</span>
               </div>
               <div className="flex items-center space-x-1.5">
-                <CheckCircle2 className="h-4.5 w-4.5 text-primary" />
+                <CheckCircle2 className="h-4.5 w-4.5 text-primary flex-shrink-0" />
                 <span>80+ Services</span>
               </div>
               <div className="flex items-center space-x-1.5">
-                <CheckCircle2 className="h-4.5 w-4.5 text-primary" />
+                <CheckCircle2 className="h-4.5 w-4.5 text-primary flex-shrink-0" />
                 <span>3 Branches</span>
               </div>
               <div className="flex items-center space-x-1.5">
-                <CheckCircle2 className="h-4.5 w-4.5 text-primary" />
+                <CheckCircle2 className="h-4.5 w-4.5 text-primary flex-shrink-0" />
                 <span>All India Online</span>
               </div>
             </motion.div>
@@ -134,7 +134,7 @@ export default function HeroSection() {
             
             {/* Visual SVG Graphic with Green Gradients */}
             <motion.div
-              className="relative w-full max-w-[420px] aspect-square rounded-2xl bg-gradient-to-tr from-primary to-[#2d773c] shadow-2xl overflow-hidden flex items-center justify-center"
+              className="relative w-full max-w-[420px] aspect-square rounded-2xl bg-gradient-to-tr from-primary to-[#2d773c] shadow-2xl overflow-hidden flex items-center justify-center border border-primary/20"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -150,19 +150,19 @@ export default function HeroSection() {
               {/* Centered Graphic Symbol */}
               <div className="absolute flex flex-col items-center justify-center text-white">
                 <Shield className="h-16 w-16 text-gold mb-3 stroke-[1.5]" />
-                <span className="text-xl font-bold tracking-widest uppercase">HK FINANCE</span>
-                <span className="text-xs text-primary-light uppercase tracking-widest mt-1 opacity-80">100% Compliant</span>
+                <span className="text-xl font-bold tracking-widest uppercase font-display">HK FINANCE</span>
+                <span className="text-xs text-primary-light uppercase tracking-widest mt-1 opacity-80 font-semibold">100% Compliant</span>
               </div>
             </motion.div>
 
             {/* Overlapping Floating Status Cards */}
             {/* Floating Card 1 */}
             <motion.div
-              className="absolute -top-4 -left-4 bg-white border border-border p-4 rounded-xl shadow-card flex items-center space-x-3 z-20"
+              className="absolute -top-4 -left-4 bg-white border border-border/80 p-4 rounded-2xl shadow-card flex items-center space-x-3 z-20"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
             >
-              <div className="p-2 bg-primary-light text-primary rounded-lg">
+              <div className="p-2 bg-primary-light text-primary rounded-xl">
                 <CheckCircle2 className="h-5 w-5" />
               </div>
               <div className="text-left">
@@ -173,11 +173,11 @@ export default function HeroSection() {
 
             {/* Floating Card 2 */}
             <motion.div
-              className="absolute bottom-6 -right-4 bg-white border border-border p-4 rounded-xl shadow-card flex items-center space-x-3 z-20"
+              className="absolute bottom-6 -right-4 bg-white border border-border/80 p-4 rounded-2xl shadow-card flex items-center space-x-3 z-20"
               animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut', delay: 0.5 }}
             >
-              <div className="p-2 bg-primary-light text-primary rounded-lg">
+              <div className="p-2 bg-primary-light text-primary rounded-xl">
                 <Sparkles className="h-5 w-5 text-[#C9960C]" />
               </div>
               <div className="text-left">
@@ -188,11 +188,11 @@ export default function HeroSection() {
 
             {/* Floating Card 3 */}
             <motion.div
-              className="absolute -bottom-6 left-6 bg-white border border-border p-4 rounded-xl shadow-card flex items-center space-x-3 z-20"
+              className="absolute -bottom-6 left-6 bg-white border border-border/80 p-4 rounded-2xl shadow-card flex items-center space-x-3 z-20"
               animate={{ y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut', delay: 1 }}
             >
-              <div className="p-2 bg-primary-light text-primary rounded-lg">
+              <div className="p-2 bg-primary-light text-primary rounded-xl">
                 <Shield className="h-5 w-5" />
               </div>
               <div className="text-left">

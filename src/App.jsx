@@ -69,7 +69,7 @@ function MainLayout() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-20 right-6 sm:bottom-6 sm:right-6 p-3.5 bg-[#25D366] hover:bg-[#1ebd57] text-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-rotate-6 z-40 flex items-center justify-center"
+        className="fixed bottom-20 right-6 lg:bottom-6 lg:right-6 p-3.5 bg-[#25D366] hover:bg-[#1ebd57] text-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-rotate-6 z-40 flex items-center justify-center"
         title="Chat on WhatsApp"
       >
         <MessageSquare className="h-6 w-6 stroke-[2]" />

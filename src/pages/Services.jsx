@@ -49,7 +49,7 @@ export default function Services() {
           </p>
 
           {/* Live Search Input Bar */}
-          <div className="relative max-w-2xl mx-auto shadow-lg rounded-md overflow-hidden bg-white">
+          <div className="relative max-w-2xl mx-auto shadow-lg rounded-xl overflow-hidden bg-white">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-mid">
               <Search className="h-5 w-5" />
             </div>
@@ -89,7 +89,7 @@ export default function Services() {
             <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 gap-2 no-scrollbar scroll-smooth">
               <button
                 onClick={() => setSelectedCategory('all')}
-                className={`px-4 py-2.5 rounded-md text-xs font-bold uppercase tracking-wider text-left transition-all duration-200 flex-shrink-0 lg:flex-shrink
+                className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-left transition-all duration-200 flex-shrink-0 lg:flex-shrink
                   ${selectedCategory === 'all' 
                     ? 'bg-primary text-white shadow-sm' 
                     : 'bg-white hover:bg-primary-light text-text-muted hover:text-primary border border-border'}`}
@@ -101,7 +101,7 @@ export default function Services() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-4 py-2.5 rounded-md text-xs font-bold uppercase tracking-wider text-left transition-all duration-200 flex-shrink-0 lg:flex-shrink
+                  className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-left transition-all duration-200 flex-shrink-0 lg:flex-shrink
                     ${selectedCategory === cat.id 
                       ? 'bg-primary text-white shadow-sm' 
                       : 'bg-white hover:bg-primary-light text-text-muted hover:text-primary border border-border'}`}
@@ -159,7 +159,7 @@ export default function Services() {
                       setSearchTerm('');
                       setSelectedCategory('all');
                     }}
-                    className="w-full sm:w-auto px-5 py-2.5 bg-primary text-white text-xs uppercase tracking-wider font-extrabold rounded-md hover:bg-[#1a4724] transition-all duration-300 shadow-sm"
+                    className="w-full sm:w-auto px-5 py-2.5 bg-primary text-white text-xs uppercase tracking-wider font-extrabold rounded-xl hover:bg-[#1a4724] transition-all duration-300 shadow-sm"
                   >
                     Reset Filters
                   </button>
@@ -167,7 +167,7 @@ export default function Services() {
                     href={`https://wa.me/917600049383?text=Hi%20HK%20Finance,%20I%20could%27t%20find%20the%2520service%2520"${encodeURIComponent(searchTerm)}"%2520on%2520your%2520directory.%2520Can%2520you%2520help%2520me?`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-5 py-2.5 bg-bg-page border border-border text-text-dark hover:border-primary text-xs uppercase tracking-wider font-extrabold rounded-md transition-all duration-300 block text-center"
+                    className="w-full sm:w-auto px-5 py-2.5 bg-bg-page border border-border text-text-dark hover:border-primary text-xs uppercase tracking-wider font-extrabold rounded-xl transition-all duration-300 block text-center"
                   >
                     Ask Custom Service
                   </a>
