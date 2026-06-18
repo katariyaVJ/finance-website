@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 
 export default function CTABanner() {
   return (
-    <section className="relative py-12 md:py-16 bg-gradient-to-br from-primary to-[#163c1e] text-white overflow-hidden">
+    <section className="relative py-8 md:py-10 bg-gradient-to-br from-primary to-[#163c1e] text-white overflow-hidden">
       {/* Decorative patterns */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor">

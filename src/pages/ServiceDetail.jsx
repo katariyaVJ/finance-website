@@ -109,7 +109,7 @@ export default function ServiceDetail() {
     <div className="bg-bg-page pt-20 text-left">
       
       {/* Service Hero Section */}
-      <section className="bg-primary text-white py-12 md:py-16 relative overflow-hidden">
+      <section className="bg-primary text-white py-8 md:py-10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Breadcrumb */}
@@ -131,7 +131,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* Main Body Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Column (Content Details) */}
@@ -341,7 +341,7 @@ export default function ServiceDetail() {
 
       {/* Related Services (Bottom) */}
       {relatedServices.length > 0 && (
-        <section className="bg-white py-12 md:py-16">
+        <section className="bg-white py-8 md:py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-xl md:text-2xl font-bold text-text-dark text-center mb-8">
               Related Compliance Services

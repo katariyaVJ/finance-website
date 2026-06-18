@@ -1,9 +1,9 @@
 export const branchesData = [
   {
     city: "Surat (Head Office)",
-    address: "447, 4th Floor, AR Mall, Mota Varachha, Surat – 394101, Gujarat",
+    address: "HK Finance, 4th Floor, AR Mall and Multiplex, 447, opp. Panvel Point, Mota Varachha, Surat, Gujarat 394105",
     phone: "7600049383, 9662634363",
-    mapLink: "https://maps.google.com/?q=AR+Mall+Mota+Varachha+Surat"
+    mapLink: "https://maps.google.com/?q=HK+Finance,+4th+Floor,+AR+Mall+and+Multiplex,+447,+opp.+Panvel+Point,+Mota+Varachha,+Surat,+Gujarat+394105"
   },
   {
     city: "Ahmedabad Branch",

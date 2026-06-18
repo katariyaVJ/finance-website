@@ -95,12 +95,12 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center space-x-8">
             <Link 
               to="/" 
-              className={`text-sm font-semibold relative py-1 hover:text-primary transition-colors group/nav ${
+              className={`text-[15px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav ${
                 location.pathname === '/' ? 'text-primary' : 'text-text-muted'
               }`}
             >
               Home
-              <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 ${location.pathname === '/' ? 'scale-x-100' : ''}`} />
+              <span className={`absolute bottom-0 left-0 w-full h-[3px] bg-primary rounded-full origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${location.pathname === '/' ? 'scale-x-100' : ''}`} />
             </Link>
             
             {/* Mega Dropdown Active Trigger */}
@@ -113,34 +113,34 @@ export default function Navbar() {
               <Link
                 to="/services"
                 onClick={() => setActiveMega(false)}
-                className={`flex items-center text-sm font-semibold relative py-1 hover:text-primary transition-colors group/nav focus:outline-none ${
+                className={`flex items-center text-[15px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav focus:outline-none ${
                   location.pathname.startsWith('/services') ? 'text-primary' : 'text-text-muted'
                 }`}
               >
                 Services
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeMega ? 'rotate-180 text-primary' : ''}`} />
-                <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 ${location.pathname.startsWith('/services') ? 'scale-x-100' : ''}`} />
+                <span className={`absolute bottom-0 left-0 w-full h-[3px] bg-primary rounded-full origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${location.pathname.startsWith('/services') ? 'scale-x-100' : ''}`} />
               </Link>
             </div>
 
             <Link 
               to="/about" 
-              className={`text-sm font-semibold relative py-1 hover:text-primary transition-colors group/nav ${
+              className={`text-[15px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav ${
                 location.pathname === '/about' ? 'text-primary' : 'text-text-muted'
               }`}
             >
               About Us
-              <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 ${location.pathname === '/about' ? 'scale-x-100' : ''}`} />
+              <span className={`absolute bottom-0 left-0 w-full h-[3px] bg-primary rounded-full origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${location.pathname === '/about' ? 'scale-x-100' : ''}`} />
             </Link>
 
             <Link 
               to="/contact" 
-              className={`text-sm font-semibold relative py-1 hover:text-primary transition-colors group/nav ${
+              className={`text-[15px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav ${
                 location.pathname === '/contact' ? 'text-primary' : 'text-text-muted'
               }`}
             >
               Contact
-              <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 ${location.pathname === '/contact' ? 'scale-x-100' : ''}`} />
+              <span className={`absolute bottom-0 left-0 w-full h-[3px] bg-primary rounded-full origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${location.pathname === '/contact' ? 'scale-x-100' : ''}`} />
             </Link>
           </nav>
 

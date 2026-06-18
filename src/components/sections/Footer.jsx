@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Mail, Phone, MapPin, ArrowRight, ArrowUpRight, MessageSquare } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin, ArrowRight, ArrowUpRight } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
 import Button from '../ui/Button';
 
 export default function Footer() {
@@ -72,7 +73,7 @@ export default function Footer() {
                 className="p-2.5 bg-white/5 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] text-white rounded-full transition-all duration-300 hover:scale-110 shadow-sm"
                 aria-label="WhatsApp"
               >
-                <MessageSquare className="h-4 w-4" />
+                <WhatsAppIcon className="h-4 w-4" />
               </a>
             </div>
 
@@ -80,11 +81,11 @@ export default function Footer() {
             <div className="flex flex-col space-y-1.5 pt-3">
               <span className="text-[10px] text-gold font-bold uppercase tracking-wider">Direct Email Desk</span>
               <a 
-                href="mailto:info@hkfinancegroup.co" 
+                href="mailto:hkfinance0807@gmail.com" 
                 className="text-sm font-semibold text-primary-light/95 hover:text-gold transition-colors flex items-center space-x-2"
               >
                 <Mail className="h-4 w-4 text-gold flex-shrink-0" />
-                <span>info@hkfinancegroup.co</span>
+                <span>hkfinance0807@gmail.com</span>
               </a>
             </div>
           </div>
@@ -181,7 +182,7 @@ export default function Footer() {
                 <div>
                   <span className="text-[11px] font-bold text-white/50 uppercase tracking-wider block mb-1">Head Office</span>
                   <p className="leading-relaxed text-primary-light/75">
-                    447, 4th Floor, AR Mall, Mota Varachha, Surat - 394101
+                    HK Finance, 4th Floor, AR Mall and Multiplex, 447, opp. Panvel Point, Mota Varachha, Surat, Gujarat 394105
                   </p>
                 </div>
                 <div>

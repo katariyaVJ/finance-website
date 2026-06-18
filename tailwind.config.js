@@ -9,8 +9,8 @@ export default {
       colors: {
         primary:       '#21592D',
         'primary-light': '#EBF5EE',
-        gold:          '#C9960C',
-        'gold-hover':  '#A87A08',
+        gold:          '#DFB12A',
+        'gold-hover':  '#EFC435',
         dark:          '#1F2520',
         'text-dark':   '#1A1A1A',
         'text-muted':  '#555555',

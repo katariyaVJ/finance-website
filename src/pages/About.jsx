@@ -37,30 +37,34 @@ export default function About() {
     <div className="bg-bg-page pt-20 text-left">
       
       {/* Hero Section */}
-      <section className="bg-primary text-white py-12 md:py-16 relative overflow-hidden">
+      <section className="bg-white py-10 md:py-12 relative overflow-hidden border-b border-border/40">
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
+          <div className="absolute right-0 top-0 h-[400px] w-[400px] bg-primary-light/50 rounded-full blur-3xl" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <div className="lg:col-span-7 flex flex-col space-y-6">
-              <span className="text-xs font-bold text-primary-light uppercase tracking-widest bg-white/10 self-start px-3 py-1 rounded-full">
+            <div className="lg:col-span-7 flex flex-col space-y-4">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary-light self-start px-3 py-1.5 rounded-xl">
                 Established Compliance Agency
               </span>
-              <h1 className="text-4xl sm:text-5xl font-extrabold font-display leading-tight text-white">
+              <h1 className="text-3xl sm:text-4xl font-extrabold font-display leading-tight text-text-dark">
                 Your Trusted Partner <br className="hidden sm:inline" />
                 Since Day One
               </h1>
-              <p className="text-base sm:text-lg text-primary-light max-w-xl opacity-90 leading-relaxed">
+              <p className="text-sm sm:text-base text-text-muted max-w-xl leading-relaxed font-medium">
                 HK Finance is a dedicated tax consulting and corporate compliance advisory firm headquartered in Surat. We empower entrepreneurs and businesses by handling all their governmental licensing, legal paperwork, and taxation returns.
               </p>
             </div>
 
             <div className="lg:col-span-5 flex justify-center">
-              {/* Abstract Visual Box for Team Photo Placeholder */}
-              <div className="relative w-full max-w-[360px] aspect-[4/3] bg-white/5 border border-white/20 rounded-2xl overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-2xl">
-                <Users className="h-12 w-12 text-gold mb-3 stroke-[1.5]" />
+              {/* Compact Visual Box */}
+              <div className="relative w-full max-w-[340px] bg-primary text-white border border-primary/20 rounded-2xl overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-lg">
+                <Users className="h-10 w-10 text-gold mb-2.5 stroke-[1.5]" />
                 <h3 className="font-extrabold text-white text-base tracking-tight font-display">Authorized Advisory Firm</h3>
-                <p className="text-xs text-primary-light/80 mt-1 font-semibold">Surat · Ahmedabad · Vadodara · Ankleshwar</p>
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent pointer-events-none" />
+                <p className="text-[11px] text-primary-light/85 mt-1 font-semibold">Surat · Ahmedabad · Vadodara · Ankleshwar</p>
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
+                <div className="absolute -right-10 -top-10 w-24 h-24 bg-gold/10 rounded-full blur-xl" />
               </div>
             </div>
 
@@ -72,7 +76,7 @@ export default function About() {
       <StatsStrip />
 
       {/* Story & Vision */}
-      <section className="bg-white py-12 md:py-16">
+      <section className="bg-white py-8 md:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             
@@ -113,7 +117,7 @@ export default function About() {
       </section>
 
       {/* Team / Roles */}
-      <section className="bg-white py-12 md:py-16">
+      <section className="bg-white py-8 md:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SectionHeader
@@ -142,7 +146,7 @@ export default function About() {
       </section>
 
       {/* Why Choose HK Finance (Value list) */}
-      <section className="bg-white py-12 md:py-16">
+      <section className="bg-white py-8 md:py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SectionHeader

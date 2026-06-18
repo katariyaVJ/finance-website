@@ -8,7 +8,7 @@ export default function ServiceCard({ icon, title, description, href }) {
   const getIcon = () => {
     if (typeof icon === 'string') {
       const ResolvedIcon = Icons[icon] || Icons.FileText;
-      return <ResolvedIcon className="h-6.5 w-6.5 text-primary transition-colors duration-300 group-hover:text-white" />;
+      return <ResolvedIcon className="h-5.5 w-5.5 text-primary transition-colors duration-300 group-hover:text-white" />;
     }
     return icon;
   };
@@ -16,31 +16,31 @@ export default function ServiceCard({ icon, title, description, href }) {
   return (
     <Link 
       to={href}
-      className="group block p-6 bg-white border border-border/80 rounded-2xl shadow-card card-hover-effect transition-all duration-300 flex flex-col justify-between"
+      className="group block px-5 py-4 bg-white border border-border/80 rounded-2xl shadow-card card-hover-effect transition-all duration-300 flex flex-col justify-between items-center text-center"
     >
-      <div>
+      <div className="flex flex-col items-center">
         {/* Icon Circle */}
-        <div className="inline-flex items-center justify-center p-3 bg-primary-light rounded-xl mb-5 group-hover:bg-primary transition-colors duration-350">
+        <div className="inline-flex items-center justify-center p-2.5 bg-primary-light rounded-xl mb-3 group-hover:bg-primary transition-colors duration-350">
           <div className="group-hover:scale-110 transition-transform duration-350 text-primary">
             {getIcon()}
           </div>
         </div>
         
         {/* Title */}
-        <h3 className="text-base sm:text-lg font-extrabold text-text-dark mb-2.5 group-hover:text-primary transition-colors duration-300 font-display">
+        <h3 className="text-sm sm:text-base font-extrabold text-text-dark mb-1.5 group-hover:text-primary transition-colors duration-300 font-display">
           {title}
         </h3>
         
         {/* Description */}
-        <p className="text-[13px] sm:text-sm text-text-muted leading-relaxed mb-4">
+        <p className="text-xs sm:text-[13px] text-text-muted leading-relaxed mb-3">
           {description}
         </p>
       </div>
 
       {/* Learn More Link */}
-      <div className="flex items-center text-xs sm:text-sm font-bold text-primary group-hover:translate-x-1.5 transition-transform duration-300 mt-4">
+      <div className="flex items-center justify-center text-xs font-bold text-primary transition-transform duration-300 mt-2">
         <span>Learn more</span> 
-        <ArrowRight className="ml-1 h-4 w-4" />
+        <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
       </div>
     </Link>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Phone, MessageSquare, MapPin, Mail } from 'lucide-react';
+import { Phone, MapPin, Mail } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
 
 export default function ContactBar() {
   const phoneNumbers = [
@@ -39,7 +40,7 @@ export default function ContactBar() {
           {/* Column 2: Message / Email */}
           <div className="flex items-start space-x-4 pt-6 md:pt-0 md:px-6">
             <div className="p-3 bg-primary/20 text-primary-light rounded-lg">
-              <MessageSquare className="h-6 w-6" />
+              <WhatsAppIcon className="h-6 w-6" />
             </div>
             <div className="text-left w-full">
               <h4 className="font-bold text-base uppercase tracking-wider text-primary-light mb-2">WhatsApp & Email</h4>
@@ -55,11 +56,11 @@ export default function ContactBar() {
                 Chat on WhatsApp
               </a>
               <a
-                href="mailto:info@hkfinancegroup.co"
+                href="mailto:hkfinance0807@gmail.com"
                 className="flex items-center space-x-2 text-sm text-gray-light hover:text-white transition-colors mt-4"
               >
                 <Mail className="h-4 w-4" />
-                <span>info@hkfinancegroup.co</span>
+                <span>hkfinance0807@gmail.com</span>
               </a>
             </div>
           </div>
@@ -72,7 +73,7 @@ export default function ContactBar() {
             <div className="text-left">
               <h4 className="font-bold text-base uppercase tracking-wider text-primary-light mb-2">Head Office</h4>
               <p className="text-sm text-gray-light leading-relaxed mb-4">
-                447, 4th Floor, AR Mall, Mota Varachha, Surat – 394101, Gujarat
+                HK Finance, 4th Floor, AR Mall and Multiplex, 447, opp. Panvel Point, Mota Varachha, Surat, Gujarat 394105
               </p>
               <div className="text-xs font-semibold text-[#C9960C] uppercase tracking-widest">
                 Branches: Ahmedabad · Vadodara · Ankleshwar

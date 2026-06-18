@@ -33,7 +33,7 @@ export default function Services() {
     <div className="bg-bg-page pt-20">
       
       {/* Search Hero Section (Green Background) */}
-      <section className="bg-primary text-white py-12 md:py-16 relative overflow-hidden">
+      <section className="bg-primary text-white py-5 md:py-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor">
             <circle cx="20" cy="20" r="50" />
@@ -41,29 +41,29 @@ export default function Services() {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-4 font-display text-white">
+          <h1 className="text-2xl md:text-3.5xl font-extrabold mb-1 font-display text-white">
             80+ Business Compliance Services
           </h1>
-          <p className="text-sm md:text-base text-primary-light max-w-xl mx-auto mb-8 opacity-90">
+          <p className="text-xs md:text-sm text-primary-light max-w-lg mx-auto mb-3 opacity-90">
             Search our comprehensive database of company registration, taxation filing, legal drafting, and licensing certifications.
           </p>
 
           {/* Live Search Input Bar */}
-          <div className="relative max-w-2xl mx-auto shadow-lg rounded-xl overflow-hidden bg-white">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-mid">
-              <Search className="h-5 w-5" />
+          <div className="relative max-w-md mx-auto shadow-md rounded-lg overflow-hidden bg-white">
+            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-mid">
+              <Search className="h-4 w-4" />
             </div>
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search e.g. GST registration, Private Limited, FSSAI, ISO..."
-              className="w-full pl-12 pr-4 py-4 bg-white text-text-dark placeholder:text-gray-mid border-0 outline-none focus:ring-0 text-sm md:text-base"
+              placeholder="Search e.g. GST registration, Pvt Ltd, FSSAI..."
+              className="w-full pl-9 pr-10 py-2 bg-white text-text-dark placeholder:text-gray-mid border-0 outline-none focus:ring-0 text-xs md:text-sm"
             />
             {searchTerm && (
               <button
                 onClick={() => setSearchTerm('')}
-                className="absolute inset-y-0 right-0 pr-4 flex items-center text-xs font-bold text-primary hover:text-gold"
+                className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-xs font-bold text-primary hover:text-gold"
               >
                 Clear
               </button>
@@ -73,14 +73,14 @@ export default function Services() {
       </section>
 
       {/* Directory Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Category Filter - Sidebar (Desktop) / Horizontal Row (Mobile) */}
-          <div className="lg:col-span-3 flex flex-col space-y-2">
+          <div className="lg:col-span-3 lg:sticky lg:top-24 self-start flex flex-col space-y-2 max-h-[calc(100vh-8rem)] overflow-y-auto no-scrollbar pb-4 pr-1">
             
             {/* Category Title */}
-            <div className="hidden lg:flex items-center space-x-2 text-text-dark font-bold text-xs uppercase tracking-widest pb-3 mb-3">
+            <div className="hidden lg:flex items-center space-x-2 text-text-dark font-bold text-xs uppercase tracking-widest pb-2 mb-2 border-b border-border">
               <SlidersHorizontal className="h-4 w-4 text-primary" />
               <span>Service Categories</span>
             </div>
@@ -89,7 +89,7 @@ export default function Services() {
             <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 gap-2 no-scrollbar scroll-smooth">
               <button
                 onClick={() => setSelectedCategory('all')}
-                className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-left transition-all duration-200 flex-shrink-0 lg:flex-shrink
+                className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-center flex items-center justify-center transition-all duration-200 flex-shrink-0 lg:flex-shrink lg:w-full min-h-[40px]
                   ${selectedCategory === 'all' 
                     ? 'bg-primary text-white shadow-sm' 
                     : 'bg-white hover:bg-primary-light text-text-muted hover:text-primary border border-border'}`}
@@ -101,7 +101,7 @@ export default function Services() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-left transition-all duration-200 flex-shrink-0 lg:flex-shrink
+                  className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-center flex items-center justify-center transition-all duration-200 flex-shrink-0 lg:flex-shrink lg:w-full min-h-[40px]
                     ${selectedCategory === cat.id 
                       ? 'bg-primary text-white shadow-sm' 
                       : 'bg-white hover:bg-primary-light text-text-muted hover:text-primary border border-border'}`}

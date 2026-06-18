@@ -1,16 +1,17 @@
 import React from 'react';
+import { Users, Briefcase, MapPin, Award } from 'lucide-react';
 import StatCard from '../cards/StatCard';
 
 export default function StatsStrip() {
   const stats = [
-    { number: '5000', suffix: '+', label: 'Clients Served' },
-    { number: '80', suffix: '+', label: 'Services Offered' },
-    { number: '3', suffix: '', label: 'Branch Locations' },
-    { number: '10', suffix: '+', label: 'Years Experience' }
+    { number: '5000', suffix: '+', label: 'Clients Served', icon: Users },
+    { number: '80', suffix: '+', label: 'Services Offered', icon: Briefcase },
+    { number: '3', suffix: '', label: 'Branch Locations', icon: MapPin },
+    { number: '10', suffix: '+', label: 'Years Experience', icon: Award }
   ];
 
   return (
-    <section className="bg-primary py-12 relative overflow-hidden">
+    <section className="bg-primary py-8 relative overflow-hidden">
       {/* Subtle decorative background patterns */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]">
         <svg className="w-full h-full" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -29,6 +30,7 @@ export default function StatsStrip() {
               number={stat.number}
               suffix={stat.suffix}
               label={stat.label}
+              icon={stat.icon}
               variant="dark"
             />
           ))}

@@ -33,7 +33,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+    <section className="bg-white py-10 md:py-14 relative overflow-hidden">
       {/* Decorative backdrops */}
       <div className="absolute right-0 bottom-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute left-0 top-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
@@ -45,6 +45,7 @@ export default function FAQSection() {
           title="Frequently Asked Questions"
           subtitle="Clear, professional compliance guidelines prepared by our qualified Chartered Accountants."
           align="center"
+          className="[&>span]:text-[13.5px] sm:[&>span]:text-[14.5px] [&>span]:tracking-wider"
         />
 
         <div className="space-y-4 mt-8">

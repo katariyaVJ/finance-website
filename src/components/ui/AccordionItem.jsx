@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ShieldCheck } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export default function AccordionItem({ question, answer, isOpen, onClick }) {
   return (
@@ -11,7 +11,7 @@ export default function AccordionItem({ question, answer, isOpen, onClick }) {
       }`}
     >
       <div className="flex items-center justify-between w-full text-left">
-        <span className={`font-extrabold text-sm sm:text-base leading-snug pr-4 transition-colors duration-300 ${
+        <span className={`font-bold text-[14.5px] sm:text-[15.5px] leading-snug pr-4 transition-colors duration-300 ${
           isOpen ? 'text-primary' : 'text-text-dark'
         }`}>
           {question}
@@ -29,15 +29,11 @@ export default function AccordionItem({ question, answer, isOpen, onClick }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: 'spring', duration: 0.4, bounce: 0 }}
             className="overflow-hidden"
           >
-            <div className="pt-4 text-xs sm:text-sm text-text-muted leading-relaxed font-medium border-t border-border/40 mt-4 animate-fade-in">
-              <div className="flex items-center space-x-1.5 text-xs text-primary font-bold mb-2.5">
-                <ShieldCheck className="h-4 w-4 text-primary" />
-                <span>Expert CA Verified Answer</span>
-              </div>
-              <p className="whitespace-pre-line text-[13px] leading-relaxed text-text-muted font-normal">
+            <div className="pt-3 text-sm text-text-muted leading-relaxed font-normal border-t border-border/30 mt-3">
+              <p className="whitespace-pre-line text-[14px] leading-relaxed text-text-muted font-normal">
                 {answer}
               </p>
             </div>

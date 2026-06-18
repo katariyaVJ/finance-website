@@ -34,7 +34,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-bg-page py-16 md:py-24 relative overflow-hidden">
+    <section className="bg-bg-page py-10 md:py-14 relative overflow-hidden">
       {/* Decorative glows */}
       <div className="absolute right-0 top-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute left-0 bottom-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />

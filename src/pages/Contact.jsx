@@ -57,7 +57,7 @@ export default function Contact() {
     <div className="bg-bg-page pt-20 text-left min-h-screen">
       
       {/* Small Green Hero */}
-      <section className="bg-primary text-white py-12 md:py-16 relative overflow-hidden">
+      <section className="bg-primary text-white py-8 md:py-10 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor">
             <rect x="0" y="0" width="100" height="100" transform="skewX(-15)" />
@@ -83,7 +83,7 @@ export default function Contact() {
       </section>
 
       {/* Main Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           {/* Left Column: Contact Information (7 cols - widened for spacious text) */}
@@ -171,7 +171,7 @@ export default function Contact() {
                   label="Connect with Partners"
                   variant="gold"
                   size="md"
-                  href="mailto:info@hkfinancegroup.co?subject=Partnership%20Enquiry%20-%20HK%20Finance"
+                  href="mailto:hkfinance0807@gmail.com?subject=Partnership%20Enquiry%20-%20HK%20Finance"
                   className="shadow-sm hover:scale-[1.02] transition-transform"
                 />
               </div>
