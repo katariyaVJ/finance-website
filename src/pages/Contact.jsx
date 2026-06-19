@@ -97,10 +97,10 @@ export default function Contact() {
             {/* Direct Channels */}
             <div className="bg-white border border-border p-6 rounded-2xl shadow-card space-y-6 flex-grow flex flex-col justify-between">
               <div>
-                <h3 className="text-lg font-bold text-text-dark pb-1 flex items-center space-x-2">
+                <h2 className="text-lg font-bold text-text-dark pb-1 flex items-center space-x-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-primary" />
                   <span>Direct Communication</span>
-                </h3>
+                </h2>
                 
                 {/* Phone Desk */}
                 <div className="flex items-start space-x-4 text-left mt-6">
@@ -108,7 +108,7 @@ export default function Contact() {
                     <Phone className="h-5.5 w-5.5" />
                   </div>
                   <div className="flex-grow">
-                    <h4 className="font-extrabold text-sm text-text-dark">Call Support (5 Lines)</h4>
+                    <h3 className="font-extrabold text-sm text-text-dark">Call Support (5 Lines)</h3>
                     <p className="text-xs text-text-muted mt-0.5">Quick connection to our senior advisors.</p>
                     <div className="grid grid-cols-2 gap-2.5 mt-3">
                       {phoneNumbers.slice(0, 4).map((num, i) => (
@@ -131,7 +131,7 @@ export default function Contact() {
                   <Clock className="h-5.5 w-5.5" />
                 </div>
                 <div>
-                  <h4 className="font-extrabold text-sm text-text-dark">Business Hours</h4>
+                  <h3 className="font-extrabold text-sm text-text-dark">Business Hours</h3>
                   <p className="text-xs text-text-muted mt-1 leading-relaxed">
                     Monday – Saturday: 10:00 AM – 07:00 PM <br />
                     Sunday: Closed
@@ -154,9 +154,9 @@ export default function Contact() {
                 </div>
 
                 <div className="text-left pl-3 space-y-2">
-                  <h4 className="font-extrabold text-base text-text-dark tracking-tight leading-snug">
+                  <h2 className="font-extrabold text-base text-text-dark tracking-tight leading-snug">
                     Professional CA, CS & Advocates Network
-                  </h4>
+                  </h2>
                   <p className="text-xs text-text-muted leading-relaxed font-semibold">
                     Are you a practicing Chartered Accountant, Company Secretary, Advocate, or corporate legal consultant? Partner with HK Finance to deliver top-tier compliance and filing solutions to your clients.
                   </p>

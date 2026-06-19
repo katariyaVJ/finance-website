@@ -7,30 +7,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </noscript>
 
-  <!-- Google Tag Manager -->
+  <!-- Optimized Analytics & GTM Loading (Non-blocking) -->
   <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX'); // REPLACE 'GTM-XXXXXXX' WITH YOUR GTM CONTAINER ID
-  </script>
-  <!-- End Google Tag Manager -->
+    (function() {
+      var initialized = false;
+      function initAnalytics() {
+        if (initialized) return;
+        initialized = true;
 
-  <!-- Google Analytics (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX'); // REPLACE 'G-XXXXXXXXXX' WITH YOUR MEASUREMENT ID
+        // Load GTM
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || []; w[l].push({
+            'gtm.start': new Date().getTime(), event: 'gtm.js'
+          });
+          var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');
+
+        // Load Google Analytics (gtag.js)
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+        document.head.appendChild(gaScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+      }
+
+      // Initialize on user interaction or after a 3.5-second timeout (when browser is idle)
+      var events = ['mouseover', 'keydown', 'touchstart', 'click', 'scroll'];
+      events.forEach(function(event) {
+        window.addEventListener(event, initAnalytics, { once: true, passive: true });
+      });
+
+      window.addEventListener('load', function() {
+        setTimeout(initAnalytics, 3500);
+      });
+    })();
   </script>
-  <!-- End Google Analytics -->
 
   <!-- Primary SEO Meta Tags -->
   <title>HK Finance | Business Compliance, GST, ITR & Company Registration Surat</title>

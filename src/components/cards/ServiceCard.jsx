@@ -16,6 +16,7 @@ export default function ServiceCard({ icon, title, description, href }) {
   return (
     <Link 
       to={href}
+      aria-label={`Learn more about ${title}`}
       className="group block px-5 py-4 bg-white border border-border/80 rounded-2xl shadow-card card-hover-effect transition-all duration-300 flex flex-col justify-between items-center text-center"
     >
       <div className="flex flex-col items-center">

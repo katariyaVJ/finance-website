@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SectionHeader({ eyebrow, title, subtitle, align = 'center', className = '' }) {
+export default function SectionHeader({ eyebrow, title, subtitle, align = 'center', className = '', eyebrowSize = 'text-xs', titleClassName = '' }) {
   const alignClasses = {
     left: 'text-left items-start',
     center: 'text-center items-center justify-center mx-auto'
@@ -9,11 +9,11 @@ export default function SectionHeader({ eyebrow, title, subtitle, align = 'cente
   return (
     <div className={`flex flex-col space-y-2 mb-12 max-w-3xl ${alignClasses[align]} ${className}`}>
       {eyebrow && (
-        <span className="text-xs font-bold text-primary tracking-widest uppercase">
+        <span className={`${eyebrowSize} font-bold text-primary tracking-widest uppercase`}>
           {eyebrow}
         </span>
       )}
-      <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark leading-tight font-display">
+      <h2 className={`text-3xl md:text-4xl font-extrabold text-text-dark leading-tight font-display ${titleClassName}`}>
         {title}
       </h2>
       {subtitle && (

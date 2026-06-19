@@ -149,7 +149,7 @@ export default function Services() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 9v4m-2-2h4" className="stroke-gold" />
                 </svg>
-                <h3 className="text-lg font-extrabold text-text-dark mb-2">No Compliance Services Found</h3>
+                <div className="text-lg font-extrabold text-text-dark mb-2">No Compliance Services Found</div>
                 <p className="text-sm text-text-muted leading-relaxed mb-8 max-w-sm mx-auto">
                   We couldn't find any service matching "{searchTerm}". Try clearing your filters or search keywords.
                 </p>

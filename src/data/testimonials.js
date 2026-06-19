@@ -33,5 +33,12 @@ export const testimonialsData = [
     city: "Surat",
     business: "Joshi E-Retail",
     rating: 5
+  },
+  {
+    quote: "Their income tax planning saved us significant tax liability this year. Very professional, highly knowledgeable, and always available to answer queries.",
+    name: "Vikas Mehta",
+    city: "Ahmedabad",
+    business: "Mehta & Sons",
+    rating: 5
   }
 ];

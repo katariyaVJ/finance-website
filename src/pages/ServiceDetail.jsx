@@ -195,9 +195,9 @@ export default function ServiceDetail() {
                     {/* Timeline Node */}
                     <span className="absolute -left-[35px] top-1 h-5 w-5 bg-primary border-4 border-white rounded-full flex items-center justify-center shadow-sm" />
                     
-                    <h4 className="text-base font-bold text-text-dark leading-none mb-2">
+                    <h3 className="text-base font-bold text-text-dark leading-none mb-2">
                       Step {i + 1}
-                    </h4>
+                    </h3>
                     <p className="text-sm text-text-muted leading-relaxed">
                       {step}
                     </p>
@@ -208,9 +208,9 @@ export default function ServiceDetail() {
 
             {/* Why choose HK */}
             <div className="bg-white border border-border/80 p-6 md:p-8 rounded-2xl shadow-card">
-              <h3 className="text-lg md:text-xl font-bold text-text-dark mb-4">
+              <h2 className="text-lg md:text-xl font-bold text-text-dark mb-4">
                 Why Choose HK Finance for {service.name}?
-              </h3>
+              </h2>
               <p className="text-sm text-text-muted leading-relaxed mb-4">
                 Our network of Chartered Accountants, corporate advisors, and legal staff are dedicated to delivering fast, secure, and error-free compliance filings. 
               </p>
@@ -322,7 +322,7 @@ export default function ServiceDetail() {
             {/* Helpline Card */}
             <div className="p-6 bg-primary-light/50 border border-primary/20 rounded-2xl text-center">
               <Phone className="h-6 w-6 text-primary mx-auto mb-2" />
-              <h4 className="font-bold text-text-dark text-sm">Need Instant Support?</h4>
+              <h3 className="font-bold text-text-dark text-sm">Need Instant Support?</h3>
               <p className="text-xs text-text-muted mt-1 mb-4">
                 Call our direct phone desk to speak with a CA.
               </p>
@@ -343,9 +343,9 @@ export default function ServiceDetail() {
       {relatedServices.length > 0 && (
         <section className="bg-white py-8 md:py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-xl md:text-2xl font-bold text-text-dark text-center mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-text-dark text-center mb-8">
               Related Compliance Services
-            </h3>
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedServices.map((rel) => (
                 <ServiceCard

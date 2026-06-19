@@ -75,9 +75,9 @@ export default function ServicesTabs() {
                   <div className="flex items-center space-x-3 text-left">
                     <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
                     <div>
-                      <h4 className="font-bold text-text-dark text-sm md:text-base leading-snug">
+                      <h3 className="font-bold text-text-dark text-sm md:text-base leading-snug">
                         {service.name}
-                      </h4>
+                      </h3>
                       <p className="text-xs text-text-muted mt-0.5 line-clamp-1">
                         {service.description}
                       </p>

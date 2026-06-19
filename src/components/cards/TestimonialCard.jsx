@@ -1,23 +1,10 @@
 import React from 'react';
 import { Star } from 'lucide-react';
-import { motion } from 'framer-motion';
 
-export default function TestimonialCard({ quote, name, city, business, rating = 5 }) {
-  // Get initials for the client avatar
-  const initials = name
-    ? name
-        .split(' ')
-        .map((n) => n[0])
-        .join('')
-        .slice(0, 2)
-        .toUpperCase()
-    : 'C';
-
+export default function TestimonialCard({ quote, name, rating = 5 }) {
   return (
-    <motion.div
-      className="p-6 bg-white border border-border/80 rounded-2xl shadow-card hover:shadow-hover hover:border-primary/50 transition-all duration-300 flex flex-col justify-between h-full select-none"
-      whileHover={{ y: -4 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+    <div
+      className="p-6 bg-white border-t border-b border-l-2 border-r-2 border-border/80 rounded-2xl shadow-card flex flex-col justify-between h-full select-none text-left transition-all duration-500 ease-in-out hover:border-l-gold hover:border-r-gold"
     >
       <div>
         {/* Star Rating */}
@@ -25,33 +12,25 @@ export default function TestimonialCard({ quote, name, city, business, rating = 
           {[...Array(5)].map((_, i) => (
             <Star
               key={i}
-              className={`h-4.5 w-4.5 fill-current ${
+              className={`h-[18px] w-[18px] fill-current ${
                 i < rating ? 'text-gold' : 'text-gray-light'
               }`}
             />
           ))}
         </div>
-        
+
         {/* Quote Text */}
-        <p className="text-[13px] md:text-sm text-text-muted leading-relaxed italic mb-6">
+        <p className="text-[17px] text-text-muted leading-relaxed italic mb-6">
           "{quote}"
         </p>
       </div>
 
-      {/* Client Profile Section */}
-      <div className="flex items-center space-x-3 pt-4 border-t border-border/40 mt-auto">
-        <div className="h-10 w-10 rounded-full bg-primary-light/80 text-primary flex items-center justify-center font-extrabold text-xs flex-shrink-0">
-          {initials}
-        </div>
-        <div className="min-w-0 text-left">
-          <h4 className="font-extrabold text-text-dark text-xs sm:text-sm leading-tight truncate">
-            {name}
-          </h4>
-          <p className="text-[10px] sm:text-xs text-text-muted truncate mt-0.5">
-            {business} · <span className="text-primary font-bold">{city}</span>
-          </p>
-        </div>
+      {/* Client Name Only */}
+      <div className="pt-4 border-t border-border mt-auto">
+        <h3 className="font-extrabold text-text-dark text-sm sm:text-base leading-tight">
+          {name}
+        </h3>
       </div>
-    </motion.div>
+    </div>
   );
 }

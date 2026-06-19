@@ -61,7 +61,7 @@ export default function About() {
               {/* Compact Visual Box */}
               <div className="relative w-full max-w-[340px] bg-primary text-white border border-primary/20 rounded-2xl overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-lg">
                 <Users className="h-10 w-10 text-gold mb-2.5 stroke-[1.5]" />
-                <h3 className="font-extrabold text-white text-base tracking-tight font-display">Authorized Advisory Firm</h3>
+                <div className="font-extrabold text-white text-base tracking-tight font-display">Authorized Advisory Firm</div>
                 <p className="text-[11px] text-primary-light/85 mt-1 font-semibold">Surat · Ahmedabad · Vadodara · Ankleshwar</p>
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
                 <div className="absolute -right-10 -top-10 w-24 h-24 bg-gold/10 rounded-full blur-xl" />
@@ -161,7 +161,7 @@ export default function About() {
               <div key={i} className="flex space-x-3 items-start p-4 bg-bg-page border border-border/80 rounded-2xl">
                 <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <div className="text-left">
-                  <h4 className="font-bold text-text-dark text-sm">{val.title}</h4>
+                  <h3 className="font-bold text-text-dark text-sm">{val.title}</h3>
                   <p className="text-xs text-text-muted mt-1 leading-relaxed">{val.desc}</p>
                 </div>
               </div>

@@ -92,9 +92,9 @@ export default function Footer() {
 
           {/* Column 2: Quick Links (2 cols) */}
           <div className="lg:col-span-2 flex flex-col space-y-4 text-left">
-            <h4 className="text-gold font-extrabold text-xs uppercase tracking-widest">
+            <h3 className="text-gold font-extrabold text-xs uppercase tracking-widest">
               Quick Links
-            </h4>
+            </h3>
             <ul className="flex flex-col space-y-3 text-sm font-semibold text-primary-light/80">
               <li>
                 <Link to="/" className="hover:text-gold hover:translate-x-1 transition-all duration-200 inline-block">Home</Link>
@@ -116,9 +116,9 @@ export default function Footer() {
 
           {/* Column 3: Key Compliance (3 cols) */}
           <div className="lg:col-span-3 flex flex-col space-y-4 text-left">
-            <h4 className="text-gold font-extrabold text-xs uppercase tracking-widest">
+            <h3 className="text-gold font-extrabold text-xs uppercase tracking-widest">
               Key Services
-            </h4>
+            </h3>
             <ul className="flex flex-col space-y-3 text-sm font-semibold text-primary-light/80">
               <li>
                 <Link to="/services/gst-return-filing" className="hover:text-gold transition-colors flex items-center justify-between group">
@@ -155,9 +155,9 @@ export default function Footer() {
 
           {/* Column 4: Contact details & Helplines (3 cols) - Curated for 2 numbers and branches */}
           <div className="lg:col-span-3 flex flex-col space-y-4 text-left">
-            <h4 className="text-gold font-extrabold text-xs uppercase tracking-widest">
+            <h3 className="text-gold font-extrabold text-xs uppercase tracking-widest">
               Direct Contact
-            </h4>
+            </h3>
             <div className="space-y-4 text-sm text-primary-light/80">
               
               {/* Helplines (2 lines only) */}

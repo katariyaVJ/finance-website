@@ -13,7 +13,7 @@ export default {
         'gold-hover':  '#EFC435',
         dark:          '#1F2520',
         'text-dark':   '#1A1A1A',
-        'text-muted':  '#555555',
+        'text-muted':  '#404040',
         'bg-page':     '#F7F7F5',
         border:        '#E0E0DC',
         'gray-mid':    '#757A76',

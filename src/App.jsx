@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Outlet } from 'react-router-dom';
 import { Phone } from 'lucide-react';
 import WhatsAppIcon from './components/ui/WhatsAppIcon';
 import Navbar from './components/sections/Navbar';
 import Footer from './components/sections/Footer';
 import Home from './pages/Home';
-import Services from './pages/Services';
-import ServiceDetail from './pages/ServiceDetail';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import NotFound from './pages/NotFound';
+const Services = lazy(() => import('./pages/Services'));
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 import { servicesData } from './data/services';
 
 // Scroll to top on navigation change helper
@@ -144,20 +144,26 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Routes>
-        {/* Pages WITH Navbar + Footer */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:slug" element={<ServiceDetail />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        </Route>
+      <Suspense fallback={
+        <div className="min-h-screen bg-bg-page flex items-center justify-center">
+          <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      }>
+        <Routes>
+          {/* Pages WITH Navbar + Footer */}
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          </Route>
 
-        {/* 404 — no Navbar, no Footer */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          {/* 404 — no Navbar, no Footer */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }

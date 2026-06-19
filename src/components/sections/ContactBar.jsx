@@ -22,7 +22,7 @@ export default function ContactBar() {
               <Phone className="h-6 w-6" />
             </div>
             <div className="text-left">
-              <h4 className="font-bold text-base uppercase tracking-wider text-primary-light mb-2">Call Us</h4>
+              <h3 className="font-bold text-base uppercase tracking-wider text-primary-light mb-2">Call Us</h3>
               <div className="flex flex-col space-y-1">
                 {phoneNumbers.map((num, i) => (
                   <a
@@ -43,7 +43,7 @@ export default function ContactBar() {
               <WhatsAppIcon className="h-6 w-6" />
             </div>
             <div className="text-left w-full">
-              <h4 className="font-bold text-base uppercase tracking-wider text-primary-light mb-2">WhatsApp & Email</h4>
+              <h3 className="font-bold text-base uppercase tracking-wider text-primary-light mb-2">WhatsApp & Email</h3>
               <p className="text-sm text-gray-light leading-relaxed mb-3">
                 Send documents or quick queries on our official WhatsApp:
               </p>
@@ -71,7 +71,7 @@ export default function ContactBar() {
               <MapPin className="h-6 w-6" />
             </div>
             <div className="text-left">
-              <h4 className="font-bold text-base uppercase tracking-wider text-primary-light mb-2">Head Office</h4>
+              <h3 className="font-bold text-base uppercase tracking-wider text-primary-light mb-2">Head Office</h3>
               <p className="text-sm text-gray-light leading-relaxed mb-4">
                 HK Finance, 4th Floor, AR Mall and Multiplex, 447, opp. Panvel Point, Mota Varachha, Surat, Gujarat 394105
               </p>

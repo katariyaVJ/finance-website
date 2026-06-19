@@ -86,7 +86,7 @@ export default function PrivacyPolicy() {
           <div className="p-5 bg-primary-light/50 border border-primary/20 rounded-2xl flex items-start space-x-3.5">
             <Lock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
             <div className="text-left text-xs md:text-sm">
-              <h4 className="font-bold text-text-dark">Government Portal Submissions</h4>
+              <h3 className="font-bold text-text-dark">Government Portal Submissions</h3>
               <p className="text-text-muted mt-1 leading-relaxed">
                 As registered filing partners, our operations adhere strictly to the Information Technology Act, 2000 and data secrecy guidelines of the Ministry of Corporate Affairs, India.
               </p>

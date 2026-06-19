@@ -50,14 +50,14 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Premium Copywriting (7 cols) */}
-          <motion.div 
-            className="lg:col-span-7 flex flex-col space-y-6 text-left"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
+          <div className="lg:col-span-7 flex flex-col space-y-6 text-left">
             {/* Professional Active Badge */}
-            <motion.div variants={itemVariants} className="self-start flex items-center space-x-2 bg-primary-light/80 border border-primary/10 px-3 py-1.5 rounded-xl">
+            <motion.div 
+              variants={itemVariants} 
+              initial="hidden"
+              animate="visible"
+              className="self-start flex items-center space-x-2 bg-primary-light/80 border border-primary/10 px-3 py-1.5 rounded-xl"
+            >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -68,19 +68,18 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Asymmetric Elegant Headline */}
-            <motion.h1 
-              variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-[54px] font-black text-text-dark leading-[1.1] tracking-tight font-display"
-            >
+            <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-black text-text-dark leading-[1.1] tracking-tight font-display">
               Simplifying Business Compliance. <br className="hidden sm:inline" />
               <span className="bg-gradient-to-r from-primary via-[#368648] to-gold bg-clip-text text-transparent">
                 Empowering Growth.
               </span>
-            </motion.h1>
+            </h1>
 
             {/* Authoritative Description */}
             <motion.p 
               variants={itemVariants}
+              initial="hidden"
+              animate="visible"
               className="text-sm sm:text-base md:text-lg text-text-muted leading-relaxed max-w-xl font-medium"
             >
               Get expert company incorporation, GST return filings, income tax audits, and legal drafting managed directly by our in-house qualified Chartered Accountants, CS, and corporate advocates.
@@ -89,6 +88,8 @@ export default function HeroSection() {
             {/* Key Offering Grid list */}
             <motion.div 
               variants={itemVariants}
+              initial="hidden"
+              animate="visible"
               className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pt-1 pb-3 max-w-lg text-left"
             >
               {[
@@ -109,6 +110,8 @@ export default function HeroSection() {
             {/* Main Action Call to Actions */}
             <motion.div 
               variants={itemVariants}
+              initial="hidden"
+              animate="visible"
               className="flex flex-wrap gap-4 pt-1"
             >
               <Button 
@@ -129,6 +132,8 @@ export default function HeroSection() {
             {/* Trust Metrics Bar */}
             <motion.div 
               variants={itemVariants}
+              initial="hidden"
+              animate="visible"
               className="pt-6 mt-2 flex flex-wrap items-center gap-y-3 gap-x-6 text-xs sm:text-sm font-bold text-text-muted border-t border-border/40"
             >
               <div className="flex items-center space-x-1.5">
@@ -144,7 +149,7 @@ export default function HeroSection() {
                 <span>All India Services</span>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
 
           {/* Right Column: Interactive Dashboard Visualization (5 cols) */}
           <div className="lg:col-span-5 relative w-full flex justify-center items-center pt-6 lg:pt-0">

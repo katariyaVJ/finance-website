@@ -84,7 +84,7 @@ export default function WhyChooseUs() {
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-text-dark text-base">{feat.title}</h4>
+                      <h3 className="font-bold text-text-dark text-base">{feat.title}</h3>
                       <p className="text-sm text-text-muted mt-1 leading-relaxed">{feat.desc}</p>
                     </div>
                   </motion.div>
