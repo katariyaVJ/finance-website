@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "hkfinance.vercel.app"
+        }
+      ],
+      "destination": "https://hkfinancegroup.co/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.hkfinance.vercel.app"
+        }
+      ],
+      "destination": "https://hkfinancegroup.co/:path*",
+      "permanent": true
+    }
+  ]
+}

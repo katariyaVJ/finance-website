@@ -70,15 +70,15 @@ export default function ServicesTabs() {
               {filteredServices.map((service) => (
                 <div
                   key={service.slug}
-                  className="flex justify-between items-center p-5 bg-bg-page border border-border/80 rounded-2xl shadow-card hover:border-primary transition-all duration-200"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between p-5 bg-white border border-border/80 rounded-2xl shadow-card hover:border-primary hover:shadow-hover transition-all duration-300 gap-4"
                 >
-                  <div className="flex items-center space-x-3 text-left">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold text-text-dark text-sm md:text-base leading-snug">
+                  <div className="flex items-start space-x-3 text-left">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-bold text-text-dark text-sm md:text-base leading-snug break-words">
                         {service.name}
                       </h3>
-                      <p className="text-xs text-text-muted mt-0.5 line-clamp-1">
+                      <p className="text-xs text-text-muted mt-1 line-clamp-2">
                         {service.description}
                       </p>
                     </div>
@@ -86,7 +86,7 @@ export default function ServicesTabs() {
                   
                   <Link
                     to={`/services/${service.slug}`}
-                    className="text-xs font-bold text-primary hover:text-gold flex items-center space-x-0.5 pl-4 flex-shrink-0 group"
+                    className="text-xs font-bold text-primary hover:text-gold flex items-center space-x-0.5 sm:pl-4 self-end sm:self-center flex-shrink-0 group"
                   >
                     <span>Get Started</span>
                     <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />

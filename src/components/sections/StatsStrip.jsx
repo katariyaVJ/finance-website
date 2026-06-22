@@ -1,13 +1,12 @@
 import React from 'react';
-import { Users, Briefcase, MapPin, Award } from 'lucide-react';
 import StatCard from '../cards/StatCard';
 
 export default function StatsStrip() {
   const stats = [
-    { number: '5000', suffix: '+', label: 'Clients Served', icon: Users },
-    { number: '80', suffix: '+', label: 'Services Offered', icon: Briefcase },
-    { number: '3', suffix: '', label: 'Branch Locations', icon: MapPin },
-    { number: '10', suffix: '+', label: 'Years Experience', icon: Award }
+    { number: '100', suffix: '+', label: 'Clients Served' },
+    { number: '80', suffix: '+', label: 'Services' },
+    { number: '3', suffix: '', label: 'Branch Locations' },
+    { number: '4', suffix: '+', label: 'Years Experience' }
   ];
 
   return (
@@ -30,7 +29,6 @@ export default function StatsStrip() {
               number={stat.number}
               suffix={stat.suffix}
               label={stat.label}
-              icon={stat.icon}
               variant="dark"
             />
           ))}

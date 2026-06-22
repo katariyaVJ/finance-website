@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </noscript>
 
   <!-- Optimized Analytics & GTM Loading (Non-blocking) -->
@@ -19,6 +19,16 @@
       var initialized = false;
       function initAnalytics() {
         if (initialized) return;
+
+        var gtmId = '%VITE_GTM_ID%';
+        var gaId = '%VITE_GA_ID%';
+
+        // If the variables are not configured or are placeholder strings, skip loading
+        if (!gtmId || gtmId.startsWith('%') || gtmId.includes('XXXXXXX')) {
+          console.warn('GTM ID is not configured. Analytics tracking disabled.');
+          return;
+        }
+
         initialized = true;
 
         // Load GTM
@@ -31,19 +41,21 @@
           j.async = true;
           j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
           f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');
+        })(window, document, 'script', 'dataLayer', gtmId);
 
-        // Load Google Analytics (gtag.js)
-        var gaScript = document.createElement('script');
-        gaScript.async = true;
-        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
-        document.head.appendChild(gaScript);
+        // Load Google Analytics (gtag.js) if present and valid
+        if (gaId && !gaId.startsWith('%') && !gaId.includes('XXXXXXXXXX')) {
+          var gaScript = document.createElement('script');
+          gaScript.async = true;
+          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+          document.head.appendChild(gaScript);
 
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', gaId);
+        }
       }
 
       // Initialize on user interaction or after a 3.5-second timeout (when browser is idle)
@@ -68,6 +80,82 @@
   <meta name="author" content="HK Finance Group" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://hkfinancegroup.co" />
+  
+  <!-- LocalBusiness & LegalService JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LegalService",
+        "@id": "https://hkfinancegroup.co/#organization",
+        "name": "HK Finance",
+        "url": "https://hkfinancegroup.co",
+        "logo": "https://hkfinancegroup.co/favicon.svg",
+        "image": "https://hkfinancegroup.co/og-image.png",
+        "description": "HK Finance offers expert GST return filing, Income Tax Return (ITR), company incorporation (Pvt Ltd, LLP, OPC), FSSAI licenses, ISO certifications, and accounting services in Surat, Ahmedabad, and Vadodara.",
+        "telephone": "+917600049383",
+        "email": "hkfinance0807@gmail.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "447, 4th Floor, AR Mall, Mota Varachha",
+          "addressLocality": "Surat",
+          "addressRegion": "Gujarat",
+          "postalCode": "394101",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "21.248834",
+          "longitude": "72.876798"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "10:00",
+          "closes": "19:00"
+        },
+        "sameAs": [
+          "https://instagram.com/hkfinancegroup"
+        ],
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Surat"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Ahmedabad"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Vadodara"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Ankleshwar"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Gujarat"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "India"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -75,7 +163,7 @@
   <meta property="og:title" content="HK Finance | Business Compliance, GST, ITR & Company Registration Surat" />
   <meta property="og:description"
     content="HK Finance offers expert GST return filing, Income Tax Return (ITR), company incorporation (Pvt Ltd, LLP, OPC), FSSAI food licenses, ISO certifications, and accounting services in Surat, Ahmedabad, Vadodara, and across India online." />
-  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:image" content="https://hkfinancegroup.co/og-image.png" />
   <meta property="og:site_name" content="HK Finance" />
   <meta property="og:locale" content="en_US" />
 
@@ -85,12 +173,12 @@
   <meta property="twitter:title" content="HK Finance | Business Compliance, GST, ITR & Company Registration Surat" />
   <meta property="twitter:description"
     content="HK Finance offers expert GST return filing, Income Tax Return (ITR), company incorporation (Pvt Ltd, LLP, OPC), FSSAI food licenses, ISO certifications, and accounting services in Surat, Ahmedabad, Vadodara, and across India online." />
-  <meta property="twitter:image" content="/og-image.jpg" />
+  <meta property="twitter:image" content="https://hkfinancegroup.co/og-image.png" />
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%VITE_GTM_ID%" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 

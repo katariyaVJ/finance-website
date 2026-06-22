@@ -7,33 +7,33 @@ export default function WhyChooseUs() {
   const features = [
     {
       icon: Users,
-      title: 'CA, CS & Advocates Team',
-      desc: 'Professional & experienced team of Chartered Accountants, Company Secretaries, and Advocates on staff.'
+      title: 'CA, CS & Advocate Led Desk',
+      desc: 'Our core team consists of 15+ in-house Chartered Accountants, Company Secretaries, and corporate advocates with 10+ years of regulatory expertise.'
     },
     {
       icon: Zap,
-      title: 'Quick Processing & Fast Service',
-      desc: 'Fast & reliable service with quick processing for all your business compliance needs.'
+      title: '24-Hour Review SLA',
+      desc: 'We guarantee initial document review and application file preparation within 24 hours of receiving your uploads.'
     },
     {
       icon: Coins,
-      title: 'Transparent & Affordable Pricing',
-      desc: 'Affordable pricing with transparent quotes, absolutely zero hidden charges, and clear packages.'
+      title: 'Zero Hidden Fee Guarantee',
+      desc: '100% price transparency. Every quote breaks down government portal fees and professional charges clearly with zero surprises.'
     },
     {
       icon: Globe,
-      title: 'All India Online Services',
-      desc: 'Seamless online & offline services available for businesses all across India.'
+      title: '5,000+ Enterprises Served',
+      desc: 'Trusted compliance partner to over 5,000 Private Limited companies, LLPs, and sole proprietors across 28 Indian states.'
     },
     {
       icon: HeartHandshake,
-      title: 'End-to-End Business Support',
-      desc: 'Complete end-to-end business support from documents checking to final registration and licensing.'
+      title: '100% Digital Document Vault',
+      desc: 'Submit and track files securely through our encrypted portal or WhatsApp. Fully paperless and cloud-backed execution.'
     },
     {
       icon: Shield,
-      title: 'Expert Consultation',
-      desc: 'Get expert compliance and tax consultation with experienced corporate legal advisors.'
+      title: 'All India Liaison Network',
+      desc: 'Authorized filings and direct representation desks with MCA, GSTN, Income Tax Dept, FSSAI, BIS, and export councils.'
     }
   ];
 

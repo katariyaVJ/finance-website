@@ -4,6 +4,8 @@ import { Shield, Sparkles, CheckCircle2, ArrowRight, Activity, Building2, UserCh
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
 
+import { Link } from 'react-router-dom';
+
 export default function HeroSection() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -63,7 +65,7 @@ export default function HeroSection() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               <span className="text-[11px] font-extrabold uppercase tracking-widest text-primary">
-                India's Preferred Corporate Desk
+                YOUR ONLY BUSINESS COMPLIANCE PARTNER
               </span>
             </motion.div>
 
@@ -85,48 +87,29 @@ export default function HeroSection() {
               Get expert company incorporation, GST return filings, income tax audits, and legal drafting managed directly by our in-house qualified Chartered Accountants, CS, and corporate advocates.
             </motion.p>
 
-            {/* Key Offering Grid list */}
+            {/* Main Action Call to Actions - Single Dominant CTA */}
             <motion.div 
               variants={itemVariants}
               initial="hidden"
               animate="visible"
-              className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pt-1 pb-3 max-w-lg text-left"
+              className="pt-2"
             >
-              {[
-                "Corporate Registrations",
-                "GST & Indirect Taxation",
-                "Tax Audits & ITR Filing",
-                "Licenses & Certifications",
-                "Outsourced Bookkeeping",
-                "Intellectual Property Rights"
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center space-x-2.5 text-xs sm:text-sm font-bold text-text-dark">
-                  <Check className="h-4 w-4 text-primary stroke-[3.5] flex-shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* Main Action Call to Actions */}
-            <motion.div 
-              variants={itemVariants}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-wrap gap-4 pt-1"
-            >
-              <Button 
-                label="Explore Services" 
-                variant="outline" 
-                size="lg" 
-                href="/services" 
-                icon={ArrowRight} 
-              />
-              <Button 
-                label="Book Free Consultation" 
-                variant="gold" 
-                size="lg" 
-                href="/contact" 
-              />
+              <div className="flex flex-wrap gap-6 items-center">
+                <Button 
+                  label="Book Free Consultation" 
+                  variant="gold" 
+                  size="lg" 
+                  href="/contact" 
+                  className="shadow-md hover:scale-[1.03] transition-transform duration-200"
+                />
+                <Link
+                  to="/services"
+                  className="inline-flex items-center text-sm font-bold text-primary hover:text-gold transition-colors group"
+                >
+                  <span>Explore 80+ Services</span>
+                  <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
             </motion.div>
 
             {/* Trust Metrics Bar */}
@@ -138,11 +121,11 @@ export default function HeroSection() {
             >
               <div className="flex items-center space-x-1.5">
                 <CheckCircle2 className="h-4.5 w-4.5 text-primary flex-shrink-0" />
-                <span>5000+ Clients Served</span>
+                <span>100+ Clients Served</span>
               </div>
               <div className="flex items-center space-x-1.5">
                 <CheckCircle2 className="h-4.5 w-4.5 text-primary flex-shrink-0" />
-                <span>80+ Services Online</span>
+                <span>80+ Services</span>
               </div>
               <div className="flex items-center space-x-1.5">
                 <CheckCircle2 className="h-4.5 w-4.5 text-primary flex-shrink-0" />

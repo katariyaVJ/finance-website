@@ -17,7 +17,7 @@ export default function BranchCard({ city, address, phone, mapLink }) {
         </div>
         
         {/* Address */}
-        <p className="text-text-muted text-[13px] leading-relaxed mb-4 font-medium">
+        <p className="text-text-muted text-sm leading-relaxed mb-4 font-medium">
           {address}
         </p>
 
@@ -25,7 +25,7 @@ export default function BranchCard({ city, address, phone, mapLink }) {
         {phone && (
           <div className="flex items-center space-x-2 text-text-dark text-sm mb-4">
             <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-            <span className="font-bold text-xs">{phone}</span>
+            <span className="font-bold text-sm">{phone}</span>
           </div>
         )}
       </div>
@@ -36,7 +36,7 @@ export default function BranchCard({ city, address, phone, mapLink }) {
           href={mapLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-xs font-bold text-primary hover:text-gold uppercase tracking-wider transition-colors duration-200 mt-2 self-start"
+          className="inline-flex items-center text-xs font-bold text-primary hover:text-[#0f3016] hover:underline uppercase tracking-wider transition-colors duration-200 mt-2 self-start"
         >
           <span>View on Google Maps</span>
           <ExternalLink className="ml-1 h-3.5 w-3.5" />
