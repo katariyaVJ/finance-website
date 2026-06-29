@@ -26,7 +26,7 @@ export default function ServiceDetail() {
 
   if (!service) {
     return (
-      <div className="min-h-[70vh] bg-bg-page flex flex-col items-center justify-center pt-24 px-4">
+      <div className="min-h-[70vh] bg-white flex flex-col items-center justify-center pt-24 px-4">
         <div className="bg-white border border-border p-8 rounded-lg shadow-card text-center max-w-md w-full">
           <HelpCircle className="h-16 w-16 text-gold mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-text-dark mb-2">Service Not Found</h2>
@@ -106,10 +106,10 @@ export default function ServiceDetail() {
       ];
 
   return (
-    <div className="bg-bg-page pt-20 text-left">
+    <div className="bg-white pt-20 text-left">
       
       {/* Service Hero Section */}
-      <section className="bg-primary text-white py-8 md:py-10 relative overflow-hidden">
+      <section className="bg-primary text-white py-[50px] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Breadcrumb */}
@@ -131,7 +131,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* Main Body Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-[50px]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Column (Content Details) */}
@@ -322,8 +322,8 @@ export default function ServiceDetail() {
             {/* Helpline Card */}
             <div className="p-6 bg-primary-light/50 border border-primary/20 rounded-2xl text-center">
               <Phone className="h-6 w-6 text-primary mx-auto mb-2" />
-              <h3 className="font-bold text-text-dark text-sm">Need Instant Support?</h3>
-              <p className="text-xs text-text-muted mt-1 mb-4">
+              <h3 className="font-bold text-text-dark text-lg">Need Instant Support?</h3>
+              <p className="text-sm text-text-muted mt-1 mb-4">
                 Call our direct phone desk to speak with a CA.
               </p>
               <a
@@ -341,7 +341,7 @@ export default function ServiceDetail() {
 
       {/* Related Services (Bottom) */}
       {relatedServices.length > 0 && (
-        <section className="bg-white py-8 md:py-10">
+        <section className="bg-white py-[50px]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-xl md:text-2xl font-bold text-text-dark text-center mb-8">
               Related Compliance Services

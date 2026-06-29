@@ -7,8 +7,7 @@ export default function ContactBar() {
     '7600049383',
     '9662634363',
     '8799160981',
-    '8866003245',
-    '9727179830'
+    '8866003245'
   ];
 
   return (
@@ -30,7 +29,7 @@ export default function ContactBar() {
                     href={`tel:${num}`}
                     className="text-sm text-gray-light hover:text-white transition-colors block"
                   >
-                    {num.slice(0, 5)} {num.slice(5)}
+                    {num.slice(0, 5)} / {num.slice(5)}
                   </a>
                 ))}
               </div>
@@ -76,7 +75,7 @@ export default function ContactBar() {
                 HK Finance, 4th Floor, AR Mall and Multiplex, 447, opp. Panvel Point, Mota Varachha, Surat, Gujarat 394105
               </p>
               <div className="text-xs font-semibold text-[#C9960C] uppercase tracking-widest">
-                Branches: Ahmedabad · Vadodara · Ankleshwar
+                Branches: Ankleshwar · Vadodara · Ahmedabad (Upcoming)
               </div>
             </div>
           </div>

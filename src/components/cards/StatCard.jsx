@@ -18,18 +18,18 @@ export default function StatCard({ number, suffix = '', label, icon: Icon, varia
 
   return (
     <div
-      className={`p-4 rounded-xl text-center ${styles[variant]} flex flex-col items-center justify-center`}
+      className={`py-6 px-2 rounded-xl text-center ${styles[variant]} flex flex-col items-center justify-center`}
     >
       {Icon && (
         <div className="mb-2 p-2 bg-white/5 rounded-xl text-gold">
           <Icon className="h-6 w-6 stroke-[1.5]" />
         </div>
       )}
-      <div className={`text-3xl sm:text-4xl lg:text-[38px] font-black mb-1.5 font-display tracking-tight leading-none ${numberStyles[variant]}`}>
+      <div className={`text-3xl sm:text-4xl lg:text-[45px] font-black mb-1.5 font-display tracking-tight leading-[32px] ${numberStyles[variant]}`}>
         {number}
         {suffix && <span className="text-gold">{suffix}</span>}
       </div>
-      <div className={`text-[11px] sm:text-xs font-bold uppercase tracking-widest ${labelStyles[variant]}`}>
+      <div className={`text-xs sm:text-sm lg:text-[15px] font-bold uppercase tracking-widest ${labelStyles[variant]}`}>
         {label}
       </div>
     </div>

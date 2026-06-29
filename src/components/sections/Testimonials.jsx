@@ -136,7 +136,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-bg-page py-10 md:py-14 relative overflow-hidden">
+    <section className="bg-white py-[50px] relative overflow-hidden">
       {/* Decorative glows */}
       <div className="absolute right-0 top-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute left-0 bottom-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
@@ -171,9 +171,9 @@ export default function Testimonials() {
           }`}
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {reviews.map((item, idx) => (
+          {reviews.map((item) => (
             <div
-              key={idx}
+              key={item.name}
               className="snap-start flex-shrink-0 w-full md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] pointer-events-none"
             >
               {/* Added pointer-events-auto inside card so click on links inside still works if needed */}
@@ -190,7 +190,7 @@ export default function Testimonials() {
 
         {/* Exactly 4 Dot Indicators */}
         <div className="flex justify-center items-center gap-1.5 mt-3">
-          {Array.from({ length: 4 }).map((_, idx) => {
+          {[0, 1, 2, 3].map((idx) => {
             const isActive = idx === currentIndex;
             return (
               <button

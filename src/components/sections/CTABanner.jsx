@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 
 export default function CTABanner() {
   return (
-    <section className="relative py-8 md:py-10 bg-gradient-to-br from-primary to-[#163c1e] text-white overflow-hidden">
+    <section className="relative py-[50px] bg-gradient-to-tr from-primary from-50% to-[#163c1e] to-50% text-white overflow-hidden">
       {/* Decorative patterns */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor">
@@ -31,7 +31,7 @@ export default function CTABanner() {
             className="w-full sm:w-auto vibrate-on-hover"
           />
           <Button
-            label="Call: 76000 49383"
+            label="Call: 76000 / 49383"
             variant="outline"
             size="lg"
             href="tel:7600049383"

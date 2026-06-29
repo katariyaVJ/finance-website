@@ -8,9 +8,9 @@ export default function PrivacyPolicy() {
   }, []);
 
   return (
-    <div className="bg-bg-page pt-20 text-left min-h-screen">
+    <div className="bg-white pt-20 text-left min-h-screen">
       {/* Green Header Banner */}
-      <section className="bg-primary text-white py-8 md:py-10 relative overflow-hidden">
+      <section className="bg-primary text-white py-[50px] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor">
             <rect x="0" y="0" width="100" height="100" transform="skewX(-10)" />
@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
       </section>
 
       {/* Main Content */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-[50px]">
         <div className="bg-white border border-border p-6 md:p-10 rounded-lg shadow-card space-y-8">
           
           <div className="flex items-center space-x-3.5 pb-6">

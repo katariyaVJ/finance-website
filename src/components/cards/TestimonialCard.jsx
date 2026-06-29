@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Star } from 'lucide-react';
 
-export default function TestimonialCard({ quote, name, rating = 5 }) {
+const STARS = [0, 1, 2, 3, 4]; // Pre-computed outside component to avoid Array creation on every render
+
+const TestimonialCard = memo(function TestimonialCard({ quote, name, rating = 5 }) {
   return (
     <div
       className="p-6 bg-white border-t border-b border-l-2 border-r-2 border-border/80 rounded-2xl shadow-card flex flex-col justify-between h-full select-none text-left transition-all duration-500 ease-in-out hover:border-l-gold hover:border-r-gold"
@@ -9,7 +11,7 @@ export default function TestimonialCard({ quote, name, rating = 5 }) {
       <div>
         {/* Star Rating */}
         <div className="flex items-center space-x-1 mb-4">
-          {[...Array(5)].map((_, i) => (
+          {STARS.map((i) => (
             <Star
               key={i}
               className={`h-[18px] w-[18px] fill-current ${
@@ -33,4 +35,6 @@ export default function TestimonialCard({ quote, name, rating = 5 }) {
       </div>
     </div>
   );
-}
+});
+
+export default TestimonialCard;

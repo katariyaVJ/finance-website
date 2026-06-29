@@ -88,12 +88,12 @@ body {
 }
 
 .card-hover-effect {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.45s ease-in-out, box-shadow 0.45s ease-in-out, border-color 0.45s ease-in-out;
 }
 .card-hover-effect:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: #21592D;
-  box-shadow: 0 12px 32px -8px rgba(33, 89, 45, 0.16), 0 4px 12px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 48px -12px rgba(33, 89, 45, 0.18), 0 6px 16px -6px rgba(0, 0, 0, 0.06);
 }
 
 /* Premium smooth reveal animations */

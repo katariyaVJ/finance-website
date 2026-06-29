@@ -45,14 +45,14 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section className="bg-bg-page py-10 md:py-14">
+    <section className="bg-white py-[50px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <SectionHeader
           eyebrow="What We Do"
           title="Complete Business Solutions Under One Roof"
           subtitle="We take the legal and tax filing burden off your shoulders so you can focus on building your enterprise."
-          align="center"
+          align="left"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
@@ -67,7 +67,7 @@ export default function ServicesGrid() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-[30px]">
           <Button
             label="View All 80+ Services"
             variant="outline"

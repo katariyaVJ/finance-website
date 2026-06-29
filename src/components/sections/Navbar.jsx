@@ -4,18 +4,8 @@ import { Menu, X, Phone, ChevronDown, Award, Building, FileSpreadsheet, Receipt,
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../ui/Button';
 import { serviceCategories, getServicesByCategory } from '../../data/services';
+import mainLogo from '../../assets/main-logo.png';
 
-const mainServices = [
-  { name: "Private Limited Company", slug: "pvt-ltd-registration", desc: "Register a Pvt Ltd company quickly with limited liability." },
-  { name: "LLP Registration", slug: "llp-registration", desc: "Form a Limited Liability Partnership with lower compliance." },
-  { name: "GST Return Filing", slug: "gst-return-filing", desc: "Ensure error-free GSTR-1 & 3B return filings on time." },
-  { name: "Income Tax Return", slug: "itr-filing", desc: "File ITR-1 to ITR-7 accurately and maximize your tax refunds." },
-  { name: "Trademark Registration", slug: "trademark-registration", desc: "Protect your brand name, logo, and secure the TM symbol." },
-  { name: "FSSAI Food License", slug: "fssai-license", desc: "Get food registration/license for manufacture or trading." },
-  { name: "Shop & Establishment", slug: "gumasta-license", desc: "Obtain Gumasta license to legalise commercial premises." },
-  { name: "Bookkeeping Services", slug: "bookkeeping-services", desc: "Maintain daily sales, purchases, and bank ledger entries." },
-  { name: "MSME Udyam Registration", slug: "msme-registration", desc: "Secure interest rate benefits and collateral-free loan access." }
-];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,14 +26,8 @@ export default function Navbar() {
 
   // Track scroll position to change background styling
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -76,36 +60,32 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white shadow-sm py-3' 
-            : 'bg-white/95 backdrop-blur-md py-4'
-        }`}
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${isScrolled
+          ? 'bg-white shadow-sm h-[70px]'
+          : 'bg-white/95 backdrop-blur-md h-[90px]'
+          }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+
           {/* Logo Section */}
           <Link to="/" className="flex items-center flex-shrink-0">
-            <span className="text-xl font-extrabold text-primary hover:text-[#1a4724] transition-colors font-display tracking-tight leading-none">
-              HK FINANCE
-            </span>
+            <img src={mainLogo} alt="HK Finance" className="h-[45px] w-auto object-contain drop-shadow-sm" />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link 
-              to="/" 
-              className={`text-[15px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav ${
-                location.pathname === '/' ? 'text-primary' : 'text-text-muted'
-              }`}
+            <Link
+              to="/"
+              className={`text-[16px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav ${location.pathname === '/' ? 'text-primary' : 'text-text-muted'
+                }`}
             >
               Home
               <span className={`absolute bottom-0 left-0 w-full h-[3px] bg-primary rounded-full origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${location.pathname === '/' ? 'scale-x-100' : ''}`} />
             </Link>
-            
+
             {/* Mega Dropdown Active Trigger */}
-            <div 
-              className="relative group" 
+            <div
+              className="relative group"
               ref={megaMenuRef}
               onMouseEnter={() => setActiveMega(true)}
               onMouseLeave={() => setActiveMega(false)}
@@ -113,31 +93,75 @@ export default function Navbar() {
               <Link
                 to="/services"
                 onClick={() => setActiveMega(false)}
-                className={`flex items-center text-[15px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav focus:outline-none ${
-                  location.pathname.startsWith('/services') ? 'text-primary' : 'text-text-muted'
-                }`}
+                className={`flex items-center text-[16px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav focus:outline-none ${location.pathname.startsWith('/services') ? 'text-primary' : 'text-text-muted'
+                  }`}
               >
                 Services
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeMega ? 'rotate-180 text-primary' : ''}`} />
                 <span className={`absolute bottom-0 left-0 w-full h-[3px] bg-primary rounded-full origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${location.pathname.startsWith('/services') ? 'scale-x-100' : ''}`} />
               </Link>
+
+              {/* Submenu Dropdown Overlay (Desktop) */}
+              <AnimatePresence>
+                {activeMega && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 15 }}
+                    transition={{ duration: 0.2, ease: 'easeOut' }}
+                    className="absolute top-full left-0 mt-3 w-[460px] bg-white border border-border/80 rounded-2xl shadow-xl z-50 overflow-hidden"
+                  >
+                    <div className="grid grid-cols-2 gap-2 p-3.5">
+                      {Object.values(serviceCategories).map((cat) => (
+                        <Link
+                          key={cat.id}
+                          to="/services"
+                          state={{ category: cat.id }}
+                          onClick={() => setActiveMega(false)}
+                          className="group/item flex items-center space-x-2.5 p-2 rounded-lg hover:bg-primary-light/40 border border-transparent hover:border-primary/10 transition-all duration-300 text-left"
+                        >
+                          <div className="p-2 bg-primary-light text-primary group-hover/item:bg-primary group-hover/item:text-white rounded-md flex-shrink-0 transition-all duration-300">
+                            {getCategoryIcon(cat.icon)}
+                          </div>
+                          <span className="font-extrabold text-[12.5px] text-text-dark group-hover/item:text-primary transition-colors leading-snug">
+                            {cat.title}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+
+                    {/* Dropdown footer */}
+                    <div className="bg-primary-light/35 py-3 px-5 flex items-center justify-between text-xs font-semibold border-t border-border/50">
+                      <span className="text-text-muted max-w-[240px] leading-tight">
+                        We offer <strong>80+ compliance services</strong> across India.
+                      </span>
+                      <Link
+                        to="/services"
+                        onClick={() => setActiveMega(false)}
+                        className="px-3.5 py-2 bg-primary hover:bg-gold text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-all duration-300 flex items-center space-x-1 cursor-pointer"
+                      >
+                        <span>All Services</span>
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
-            <Link 
-              to="/about" 
-              className={`text-[15px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav ${
-                location.pathname === '/about' ? 'text-primary' : 'text-text-muted'
-              }`}
+            <Link
+              to="/about"
+              className={`text-[16px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav ${location.pathname === '/about' ? 'text-primary' : 'text-text-muted'
+                }`}
             >
               About Us
               <span className={`absolute bottom-0 left-0 w-full h-[3px] bg-primary rounded-full origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${location.pathname === '/about' ? 'scale-x-100' : ''}`} />
             </Link>
 
-            <Link 
-              to="/contact" 
-              className={`text-[15px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav ${
-                location.pathname === '/contact' ? 'text-primary' : 'text-text-muted'
-              }`}
+            <Link
+              to="/contact"
+              className={`text-[16px] font-bold relative py-1 hover:text-primary transition-colors duration-300 group/nav ${location.pathname === '/contact' ? 'text-primary' : 'text-text-muted'
+                }`}
             >
               Contact
               <span className={`absolute bottom-0 left-0 w-full h-[3px] bg-primary rounded-full origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${location.pathname === '/contact' ? 'scale-x-100' : ''}`} />
@@ -146,12 +170,16 @@ export default function Navbar() {
 
           {/* Right Action Buttons */}
           <div className="hidden lg:flex items-center space-x-6">
-            <Button 
-              label="Consult Now" 
-              variant="gold" 
-              size="md" 
-              href="/contact" 
-            />
+            <Link
+              to="/contact"
+              className="relative overflow-hidden group/btn bg-gold text-[#1A1A1A] font-bold text-base px-6 py-2.5 rounded-xl shadow-sm inline-flex items-center justify-center transition-all duration-500 z-10"
+            >
+              <span className="absolute inset-0 bg-primary transform -skew-x-12 -translate-x-[115%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-out -z-10" />
+              <span className="relative z-10 flex items-center group-hover/btn:text-white transition-colors duration-300">
+                Consult Now
+                <ArrowRight className="h-5 w-5 ml-1.5 transition-transform duration-300 group-hover/btn:translate-x-1" />
+              </span>
+            </Link>
           </div>
 
           {/* Mobile Hamburguer Toggle */}
@@ -167,57 +195,6 @@ export default function Navbar() {
 
         </div>
 
-        {/* Mega Menu Overlay (Desktop) */}
-        <AnimatePresence>
-          {activeMega && (
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 15 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="absolute top-full left-0 w-full bg-white shadow-xl z-50 overflow-y-auto max-h-[85vh] no-scrollbar"
-              onMouseEnter={() => setActiveMega(true)}
-              onMouseLeave={() => setActiveMega(false)}
-            >
-              <div className="max-w-6xl mx-auto px-8 py-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {mainServices.map((service) => (
-                    <Link
-                      key={service.slug}
-                      to={`/services/${service.slug}`}
-                      onClick={() => setActiveMega(false)}
-                      className="flex flex-col p-4 bg-bg-page/50 hover:bg-primary/5 rounded-xl transition-all duration-300 group/item text-left"
-                    >
-                      <span className="font-extrabold text-sm text-text-dark group-hover/item:text-primary transition-colors">
-                        {service.name}
-                      </span>
-                      <span className="text-xs text-text-muted mt-1 leading-relaxed">
-                        {service.desc}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Bottom footer inside mega dropdown */}
-              <div className="bg-primary-light/40 py-4 px-8">
-                <div className="max-w-6xl mx-auto flex items-center justify-between text-xs md:text-sm">
-                  <span className="text-text-muted font-medium">
-                    Looking for a specific license? We offer <strong>80+ compliance services</strong> across India.
-                  </span>
-                  <Link
-                    to="/services"
-                    onClick={() => setActiveMega(false)}
-                    className="text-primary font-extrabold hover:text-gold flex items-center transition-colors"
-                  >
-                    Open Full Directory
-                    <ArrowRight className="h-4 w-4 ml-1.5" />
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
       </header>
 
@@ -263,7 +240,7 @@ export default function Navbar() {
                   >
                     Home
                   </Link>
-                  
+
                   {/* Services Accordion Trigger */}
                   <div className="py-2">
                     <div className="flex justify-between items-center w-full">
@@ -282,7 +259,7 @@ export default function Navbar() {
                         <ChevronDown className={`h-5 w-5 text-primary transition-transform duration-300 ${mobileActiveCategory === 'services' ? 'rotate-180' : ''}`} />
                       </button>
                     </div>
-                    
+
                     <AnimatePresence>
                       {mobileActiveCategory === 'services' && (
                         <motion.div
@@ -370,14 +347,17 @@ export default function Navbar() {
 
               {/* Bottom drawer buttons */}
               <div className="flex flex-col space-y-4 pt-6 mt-auto">
-                <Button
-                  label="Consult Now"
-                  variant="gold"
-                  size="md"
-                  href="/contact"
-                  className="w-full"
+                <Link
+                  to="/contact"
                   onClick={() => setIsOpen(false)}
-                />
+                  className="relative overflow-hidden group/btn bg-gold text-[#1A1A1A] font-bold text-base w-full py-3 rounded-xl shadow-sm inline-flex items-center justify-center transition-all duration-500 z-10"
+                >
+                  <span className="absolute inset-0 bg-primary transform -skew-x-12 -translate-x-[115%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-out -z-10" />
+                  <span className="relative z-10 flex items-center group-hover/btn:text-white transition-colors duration-300">
+                    Consult Now
+                    <ArrowRight className="h-5 w-5 ml-1.5 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                  </span>
+                </Link>
               </div>
             </motion.div>
           </>

@@ -11,14 +11,34 @@ export default function Services() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Handle redirect from mega menu with category in state
+  // Handle redirect from mega menu with category in state — also scroll to directory
   useEffect(() => {
     if (location.state && location.state.category) {
       setSelectedCategory(location.state.category);
       // Clear state so reload doesn't force category
       window.history.replaceState({}, document.title);
+      // Scroll to directory listing so the user sees the filtered result
+      setTimeout(() => {
+        const element = document.getElementById('services-directory');
+        if (element) {
+          const yOffset = -90;
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 100);
     }
   }, [location]);
+
+  // Handle category change and scroll up to the directory start
+  const handleCategoryChange = (categoryId) => {
+    setSelectedCategory(categoryId);
+    const element = document.getElementById('services-directory');
+    if (element) {
+      const yOffset = -90; // Spacing below sticky header
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
 
   // Live filter logic
   const filteredServices = servicesData.filter((service) => {
@@ -31,54 +51,59 @@ export default function Services() {
   });
 
   return (
-    <div className="bg-bg-page pt-20">
+    <div className="bg-white pt-20">
       
-      {/* Search Hero Section (Green Background) */}
-      <section className="bg-primary text-white py-5 md:py-6 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor">
-            <circle cx="20" cy="20" r="50" />
-          </svg>
-        </div>
+      {/* Search Hero Section (Clean Background) */}
+      <section className="bg-gradient-to-br from-[#1b4a25] to-primary text-white py-[50px] relative overflow-hidden">
+        {/* Subtle grid and accent lighting */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
+        <div className="absolute right-0 top-0 h-[250px] w-[250px] bg-primary-light/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-2xl md:text-3.5xl font-extrabold mb-1 font-display text-white">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-3 font-display text-white tracking-tight leading-tight">
             80+ Business Compliance Services
           </h1>
-          <p className="text-xs md:text-sm text-primary-light max-w-lg mx-auto mb-3 opacity-90">
+          <p className="text-sm md:text-base text-primary-light/95 max-w-2xl mx-auto mb-6 leading-relaxed font-sans">
             Search our comprehensive database of company registration, taxation filing, legal drafting, and licensing certifications.
           </p>
 
           {/* Live Search Input Bar */}
-          <div className="relative max-w-md mx-auto shadow-md rounded-lg overflow-hidden bg-white">
-            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-mid">
-              <Search className="h-4 w-4" />
+          <div className="relative max-w-xl mx-auto shadow-xl rounded-2xl bg-white p-1.5 flex items-center border border-border/40 focus-within:border-primary/20 focus-within:ring-4 focus-within:ring-primary-light/40 transition-all duration-300">
+            <div className="pl-3 pr-1 text-primary flex-shrink-0">
+              <Search className="h-5 w-5 stroke-[2.5]" />
             </div>
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search e.g. GST registration, Pvt Ltd, FSSAI..."
-              className="w-full pl-9 pr-10 py-2 bg-white text-text-dark placeholder:text-gray-mid border-0 outline-none focus:ring-0 text-xs md:text-sm"
+              className="w-full bg-white text-text-dark placeholder:text-gray-mid/80 border-none outline-none focus:outline-none focus:ring-0 text-sm md:text-base py-2.5 px-2 font-medium"
             />
             {searchTerm && (
               <button
+                type="button"
                 onClick={() => setSearchTerm('')}
-                className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-xs font-bold text-primary hover:text-gold"
+                className="px-3.5 py-1.5 text-xs md:text-sm font-semibold text-text-muted hover:text-primary transition-colors mr-1 cursor-pointer"
               >
                 Clear
               </button>
             )}
+            <button 
+              type="submit"
+              className="hidden sm:block px-5 py-2.5 bg-primary hover:bg-[#1a4724] text-white rounded-xl text-xs md:text-sm font-extrabold shadow-sm transition-all duration-200 flex-shrink-0 cursor-pointer"
+            >
+              Search
+            </button>
           </div>
         </div>
       </section>
 
       {/* Directory Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+      <section id="services-directory" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-[50px]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Category Filter - Sidebar (Desktop) / Horizontal Row (Mobile) */}
-          <div className="lg:col-span-3 lg:sticky lg:top-24 self-start flex flex-col space-y-2 max-h-[calc(100vh-8rem)] overflow-y-auto no-scrollbar pb-4 pr-1">
+          <div className="lg:col-span-3 lg:sticky lg:top-24 self-start flex flex-col space-y-3 max-h-[calc(100vh-8rem)] overflow-y-auto no-scrollbar pb-4 pr-1">
             
             {/* Category Title */}
             <div className="hidden lg:flex items-center space-x-2 text-text-dark font-bold text-xs uppercase tracking-widest pb-2 mb-2 border-b border-border">
@@ -87,39 +112,44 @@ export default function Services() {
             </div>
 
             {/* List */}
-            <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 gap-2 no-scrollbar scroll-smooth">
+            <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 gap-3 no-scrollbar scroll-smooth">
               <button
-                onClick={() => setSelectedCategory('all')}
-                className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-center flex items-center justify-center transition-all duration-200 flex-shrink-0 lg:flex-shrink lg:w-full min-h-[40px]
+                type="button"
+                onClick={() => handleCategoryChange('all')}
+                className={`group px-5 lg:px-6 py-2.5 rounded-xl text-[13.5px] font-extrabold uppercase tracking-wider flex items-center justify-center transition-all duration-300 flex-shrink-0 lg:flex-shrink lg:w-full min-h-[40px] cursor-pointer text-center
                   ${selectedCategory === 'all' 
-                    ? 'bg-primary text-white shadow-sm' 
-                    : 'bg-white hover:bg-primary-light text-text-muted hover:text-primary border border-border'}`}
+                    ? 'bg-primary text-white shadow-md shadow-primary/10 border border-primary scale-[1.01]' 
+                    : 'bg-white text-text-dark border border-border hover:border-primary'}`}
               >
-                All Services
+                <span>All Services</span>
               </button>
               
-              {Object.values(serviceCategories).map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-center flex items-center justify-center transition-all duration-200 flex-shrink-0 lg:flex-shrink lg:w-full min-h-[40px]
-                    ${selectedCategory === cat.id 
-                      ? 'bg-primary text-white shadow-sm' 
-                      : 'bg-white hover:bg-primary-light text-text-muted hover:text-primary border border-border'}`}
-                >
-                  {cat.title}
-                </button>
-              ))}
+              {Object.values(serviceCategories).map((cat) => {
+                const isActive = selectedCategory === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onClick={() => handleCategoryChange(cat.id)}
+                    className={`group px-5 lg:px-6 py-2.5 rounded-xl text-[13.5px] font-extrabold uppercase tracking-wider flex items-center justify-center transition-all duration-300 flex-shrink-0 lg:flex-shrink lg:w-full min-h-[40px] cursor-pointer text-center
+                      ${isActive 
+                        ? 'bg-primary text-white shadow-md shadow-primary/10 border border-primary scale-[1.01]' 
+                        : 'bg-white text-text-dark border border-border hover:border-primary'}`}
+                  >
+                    <span>{cat.title}</span>
+                  </button>
+                );
+              })}
             </div>
 
           </div>
 
           {/* Service Cards Grid (Right side) */}
           <div className="lg:col-span-9 flex flex-col space-y-6">
-            
+
             {/* Count Indicator */}
             <div className="text-left text-sm text-text-muted font-semibold">
-              Showing <span className="text-primary font-bold">{filteredServices.length}</span> services 
+              Showing <span className="text-primary font-bold">{filteredServices.length}</span> services
               {selectedCategory !== 'all' && (
                 <> in <span className="text-primary font-bold">{serviceCategories[selectedCategory]?.title}</span></>
               )}
@@ -145,7 +175,7 @@ export default function Services() {
                             {cat.title}
                           </h2>
                         </div>
-                        
+
                         {/* Service Cards Grid inside Category */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                           {catServices.map((service) => (
@@ -168,8 +198,8 @@ export default function Services() {
                     <ServiceCard
                       key={service.slug}
                       icon={
-                        selectedCategory !== 'all' 
-                          ? serviceCategories[selectedCategory]?.icon 
+                        selectedCategory !== 'all'
+                          ? serviceCategories[selectedCategory]?.icon
                           : serviceCategories[service.category]?.icon
                       }
                       title={service.name}
@@ -201,7 +231,7 @@ export default function Services() {
                     Reset Filters
                   </button>
                   <a
-                    href={`https://wa.me/917600049383?text=Hi%20HK%20Finance,%20I%20could%27t%20find%20the%2520service%2520"${encodeURIComponent(searchTerm)}"%2520on%2520your%2520directory.%2520Can%2520you%2520help%2520me?`}
+                    href={`https://wa.me/917600049383?text=${encodeURIComponent(`Hi HK Finance, I couldn't find the service "${searchTerm}" on your directory. Can you help me?`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto px-5 py-2.5 bg-bg-page border border-border text-text-dark hover:border-primary text-xs uppercase tracking-wider font-extrabold rounded-xl transition-all duration-300 block text-center"

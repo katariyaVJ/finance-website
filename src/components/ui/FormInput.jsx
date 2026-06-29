@@ -24,7 +24,7 @@ export default function FormInput({
   return (
     <div className={`flex flex-col space-y-1.5 w-full ${className}`}>
       {label && (
-        <label className="text-xs font-semibold text-text-dark uppercase tracking-wider">
+        <label className="text-sm font-semibold text-text-dark uppercase tracking-wider">
           {label} {required && <span className="text-red-500">*</span>}
         </label>
       )}

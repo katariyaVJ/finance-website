@@ -6,10 +6,10 @@ export const branchesData = [
     mapLink: "https://maps.google.com/?q=HK+Finance,+4th+Floor,+AR+Mall+and+Multiplex,+447,+opp.+Panvel+Point,+Mota+Varachha,+Surat,+Gujarat+394105"
   },
   {
-    city: "Ahmedabad Branch",
-    address: "302, 3rd Floor, Shukan Business Hub, CG Road, Ahmedabad – 380009, Gujarat",
-    phone: "8799160981",
-    mapLink: "https://maps.google.com/?q=CG+Road+Ahmedabad"
+    city: "Ankleshwar Branch",
+    address: "105, First Floor, Prism Complex, Station Road, Ankleshwar – 393001, Gujarat",
+    phone: "9727179830",
+    mapLink: "https://maps.google.com/?q=Station+Road+Ankleshwar"
   },
   {
     city: "Vadodara Branch",
@@ -18,9 +18,7 @@ export const branchesData = [
     mapLink: "https://maps.google.com/?q=Alkapuri+Vadodara"
   },
   {
-    city: "Ankleshwar Branch",
-    address: "105, First Floor, Prism Complex, Station Road, Ankleshwar – 393001, Gujarat",
-    phone: "9727179830",
-    mapLink: "https://maps.google.com/?q=Station+Road+Ankleshwar"
+    city: "Ahmedabad Branch",
+    upcoming: true
   }
 ];

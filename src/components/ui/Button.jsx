@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
-export default function Button({
+/**
+ * Button component — supports Link (internal), <a> (external), and <button> variants.
+ * Wrapped in React.memo to prevent unnecessary re-renders from parent state changes.
+ */
+const Button = memo(function Button({
   label,
   variant = 'primary',
   size = 'md',
@@ -19,20 +22,14 @@ export default function Button({
   const variants = {
     primary: 'bg-primary text-white hover:bg-[#1a4724] active:bg-[#153a1d] shadow-sm',
     gold: 'bg-gold text-dark hover:bg-gold-hover active:bg-[#916a08] shadow-sm font-semibold',
-    outline: 'border border-primary text-primary bg-transparent hover:bg-primary-light active:bg-[#d5ecd8]',
+    outline: 'border border-primary text-white bg-primary hover:bg-gold hover:border-gold hover:text-[#1A1A1A] active:bg-gold-hover transition-all duration-500',
     ghost: 'text-text-muted hover:text-primary hover:bg-primary-light/40 bg-transparent'
   };
 
   const sizes = {
     sm: 'px-3 py-1.5 text-xs font-semibold',
     md: 'px-5 py-2.5 text-sm',
-    lg: 'px-8 py-3.5 text-base'
-  };
-
-  const motionProps = {
-    whileHover: disabled ? {} : { y: -2, scale: 1.03, boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.08)' },
-    whileTap: disabled ? {} : { scale: 0.98 },
-    transition: { type: 'spring', stiffness: 400, damping: 15 }
+    lg: 'px-7 py-3.5 text-base'
   };
 
   const content = (
@@ -47,35 +44,34 @@ export default function Button({
   if (href) {
     if (external) {
       return (
-        <motion.a
+        <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
           className={buttonClasses}
-          {...motionProps}
         >
           {content}
-        </motion.a>
+        </a>
       );
     }
+    // Internal link: no unnecessary motion.div wrapper
     return (
-      <motion.div className="inline-block" {...motionProps}>
-        <Link to={href} className={buttonClasses}>
-          {content}
-        </Link>
-      </motion.div>
+      <Link to={href} className={buttonClasses}>
+        {content}
+      </Link>
     );
   }
 
   return (
-    <motion.button
+    <button
       type={type}
       onClick={onClick}
       disabled={disabled}
       className={buttonClasses}
-      {...motionProps}
     >
       {content}
-    </motion.button>
+    </button>
   );
-}
+});
+
+export default Button;

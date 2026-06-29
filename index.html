@@ -13,62 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </noscript>
 
-  <!-- Optimized Analytics & GTM Loading (Non-blocking) -->
-  <script>
-    (function() {
-      var initialized = false;
-      function initAnalytics() {
-        if (initialized) return;
 
-        var gtmId = '%VITE_GTM_ID%';
-        var gaId = '%VITE_GA_ID%';
-
-        // If the variables are not configured or are placeholder strings, skip loading
-        if (!gtmId || gtmId.startsWith('%') || gtmId.includes('XXXXXXX')) {
-          console.warn('GTM ID is not configured. Analytics tracking disabled.');
-          return;
-        }
-
-        initialized = true;
-
-        // Load GTM
-        (function (w, d, s, l, i) {
-          w[l] = w[l] || []; w[l].push({
-            'gtm.start': new Date().getTime(), event: 'gtm.js'
-          });
-          var f = d.getElementsByTagName(s)[0],
-              j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-          j.async = true;
-          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-          f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', gtmId);
-
-        // Load Google Analytics (gtag.js) if present and valid
-        if (gaId && !gaId.startsWith('%') && !gaId.includes('XXXXXXXXXX')) {
-          var gaScript = document.createElement('script');
-          gaScript.async = true;
-          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
-          document.head.appendChild(gaScript);
-
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { dataLayer.push(arguments); }
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', gaId);
-        }
-      }
-
-      // Initialize on user interaction or after a 3.5-second timeout (when browser is idle)
-      var events = ['mouseover', 'keydown', 'touchstart', 'click', 'scroll'];
-      events.forEach(function(event) {
-        window.addEventListener(event, initAnalytics, { once: true, passive: true });
-      });
-
-      window.addEventListener('load', function() {
-        setTimeout(initAnalytics, 3500);
-      });
-    })();
-  </script>
 
   <!-- Primary SEO Meta Tags -->
   <title>HK Finance | Business Compliance, GST, ITR & Company Registration Surat</title>
@@ -177,10 +122,7 @@
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%VITE_GTM_ID%" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+
 
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>

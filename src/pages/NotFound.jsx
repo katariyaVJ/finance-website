@@ -47,7 +47,7 @@ export default function NotFound() {
       {/* Button */}
       <Link 
         to="/" 
-        className="px-10 py-3 md:py-4 md:px-12 bg-[#E1483D] hover:bg-[#c93d33] text-white font-bold rounded-lg transition-transform hover:scale-105 text-lg shadow-md"
+        className="px-10 py-3 md:py-4 md:px-12 bg-primary hover:bg-[#12361d] text-white font-bold rounded-lg transition-transform hover:scale-105 text-lg shadow-md"
       >
         Go home
       </Link>

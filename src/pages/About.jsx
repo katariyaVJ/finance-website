@@ -34,10 +34,10 @@ export default function About() {
   ];
 
   return (
-    <div className="bg-bg-page pt-20 text-left">
+    <div className="bg-white pt-20 text-left">
       
       {/* Hero Section */}
-      <section className="bg-white py-10 md:py-12 relative overflow-hidden border-b border-border/40">
+      <section className="bg-white py-[50px] relative overflow-hidden border-b border-border/40">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
           <div className="absolute right-0 top-0 h-[400px] w-[400px] bg-primary-light/50 rounded-full blur-3xl" />
         </div>
@@ -58,15 +58,15 @@ export default function About() {
             </div>
 
             <div className="lg:col-span-5 flex justify-center">
-              {/* Compact Visual Box */}
-              <div className="relative w-full max-w-[340px] bg-primary text-white border border-primary/20 rounded-2xl overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-lg">
-                <Users className="h-10 w-10 text-gold mb-2.5 stroke-[1.5]" />
-                <div className="font-extrabold text-white text-base tracking-tight font-display">Authorized Advisory Firm</div>
-                <p className="text-[11px] text-primary-light/85 mt-1 font-semibold">Surat · Ahmedabad · Vadodara · Ankleshwar</p>
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-                <div className="absolute -right-10 -top-10 w-24 h-24 bg-gold/10 rounded-full blur-xl" />
-              </div>
-            </div>
+               {/* Compact Visual Box */}
+               <div className="relative w-full max-w-[360px] bg-primary text-white border border-primary/20 rounded-2xl overflow-hidden flex flex-col items-center justify-center p-7 text-center shadow-lg">
+                 <Users className="h-11 w-11 text-gold mb-3 stroke-[1.5]" />
+                 <div className="font-extrabold text-white text-lg md:text-xl tracking-tight font-display">Authorized Advisory Firm</div>
+                 <p className="text-sm md:text-base text-primary-light/85 mt-1.5 font-semibold">Tax, Compliance & Licensing Services</p>
+                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
+                 <div className="absolute -right-10 -top-10 w-24 h-24 bg-gold/10 rounded-full blur-xl" />
+               </div>
+             </div>
 
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function About() {
       <StatsStrip />
 
       {/* Story & Vision */}
-      <section className="bg-white py-8 md:py-10">
+      <section className="bg-white py-[50px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             
@@ -97,7 +97,7 @@ export default function About() {
               <div className="p-6 bg-bg-page border border-border/80 rounded-2xl shadow-card">
                 <Target className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-bold text-text-dark text-base mb-2">Our Mission</h3>
-                <p className="text-xs md:text-sm text-text-muted leading-relaxed">
+                <p className="text-sm md:text-base text-text-muted leading-relaxed">
                   To provide transparent, affordable, and quick compliance solutions, enabling entrepreneurs to grow their businesses without legal roadblocks.
                 </p>
               </div>
@@ -105,7 +105,7 @@ export default function About() {
               <div className="p-6 bg-bg-page border border-border/80 rounded-2xl shadow-card">
                 <Eye className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-bold text-text-dark text-base mb-2">Our Vision</h3>
-                <p className="text-xs md:text-sm text-text-muted leading-relaxed">
+                <p className="text-sm md:text-base text-text-muted leading-relaxed">
                   To become India’s most trusted online platform for business registration, licensing, and taxation advisory, known for compliance integrity.
                 </p>
               </div>
@@ -117,26 +117,26 @@ export default function About() {
       </section>
 
       {/* Team / Roles */}
-      <section className="bg-white py-8 md:py-10">
+      <section className="bg-white py-[50px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SectionHeader
             eyebrow="Our Experts"
             title="In-House Professional Staff"
             subtitle="We do not outsource your filings. Our dedicated in-house team of qualified experts handles every document."
-            align="center"
+            align="left"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {teamRoles.map((role, i) => {
               const Icon = role.icon;
               return (
-                <div key={i} className="p-6 bg-white border border-border/80 rounded-2xl shadow-card text-center hover:border-primary hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+                <div key={i} className="p-6 bg-white border border-border/80 rounded-2xl shadow-card text-left hover:border-primary hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
                   <div className="inline-flex items-center justify-center p-3 bg-primary-light text-primary rounded-lg mb-4">
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="font-bold text-text-dark text-lg mb-2">{role.role}</h3>
-                  <p className="text-xs md:text-sm text-text-muted leading-relaxed">{role.desc}</p>
+                  <p className="text-sm md:text-base text-text-muted leading-relaxed">{role.desc}</p>
                 </div>
               );
             })}
@@ -146,23 +146,23 @@ export default function About() {
       </section>
 
       {/* Why Choose HK Finance (Value list) */}
-      <section className="bg-white py-8 md:py-10">
+      <section className="bg-white py-[50px]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SectionHeader
             eyebrow="Our Promise"
             title="How We Deliver Value"
             subtitle="Our clients choose us for our transparency, speed, and dedicated CA support."
-            align="center"
+            align="left"
           />
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             {valueList.map((val, i) => (
-              <div key={i} className="flex space-x-3 items-start p-4 bg-bg-page border border-border/80 rounded-2xl">
-                <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <div key={i} className="flex space-x-3 items-start p-4 bg-bg-page border border-border/80 rounded-2xl transition-all duration-300 hover:bg-white hover:border-primary/20 hover:shadow-md hover:-translate-y-0.5">
+                <ShieldCheck className="h-5.5 w-5.5 text-primary flex-shrink-0 mt-0.5" />
                 <div className="text-left">
-                  <h3 className="font-bold text-text-dark text-sm">{val.title}</h3>
-                  <p className="text-xs text-text-muted mt-1 leading-relaxed">{val.desc}</p>
+                  <h3 className="font-bold text-text-dark text-base">{val.title}</h3>
+                  <p className="text-sm text-text-muted mt-1 leading-relaxed">{val.desc}</p>
                 </div>
               </div>
             ))}

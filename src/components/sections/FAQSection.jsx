@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import SectionHeader from '../ui/SectionHeader';
 import AccordionItem from '../ui/AccordionItem';
+import faqImg from '../../assets/FAQ.png';
 
 const customFaqs = [
   {
@@ -17,7 +18,7 @@ const customFaqs = [
   },
   {
     question: "Who is required to file a Tax Audit under Section 44AB?",
-    answer: "A statutory Tax Audit by a Chartered Accountant is mandatory if your business turnover exceeds ₹10 Crore in a financial year (or ₹2 Crore for professionals), or if you opt for presumptive taxation and claim lower profits than the mandated statutory limits."
+    answer: "A statutory Tax Audit by a Chartered Accountant is mandatory if your business turnover exceeds ₹10 Crore in a financial year (or ₹2 Crore for professionals), or if you opt of presumptive taxation and claim lower profits than the mandated statutory limits."
   },
   {
     question: "How do I share records for outsourced bookkeeping with your team?",
@@ -28,38 +29,59 @@ const customFaqs = [
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const handleToggle = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const handleToggle = useCallback((index) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  }, []);
 
   return (
-    <section className="bg-white py-10 md:py-14 relative overflow-hidden">
+    <section className="bg-white py-[50px] relative overflow-hidden" style={{ overflowAnchor: 'none' }}>
       {/* Decorative backdrops */}
       <div className="absolute right-0 bottom-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute left-0 top-0 w-80 h-80 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
-        
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           eyebrow="FAQ & Insights"
-          title="Frequently Asked Questions"
-          subtitle="Clear, professional compliance guidelines prepared by our qualified Chartered Accountants."
-          align="center"
-          className="[&>span]:text-[13.5px] sm:[&>span]:text-[14.5px] [&>span]:tracking-wider"
+          eyebrowSize="text-[14px]"
+          title="Frequently Asked Questions & Advisory"
+          titleClassName=""
+          align="left"
+          className="mb-10 !space-y-5 !max-w-none"
         />
 
-        <div className="space-y-4 mt-8">
-          {customFaqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              question={faq.question}
-              answer={faq.answer}
-              isOpen={openIndex === index}
-              onClick={() => handleToggle(index)}
-            />
-          ))}
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8" style={{ overflowAnchor: 'none' }}>
 
+          {/* Left Column: Image Column (stretches to match FAQ height) */}
+          <div className="w-full pt-6 lg:pt-0">
+            {/* Sticky Container */}
+            <div className="lg:sticky lg:top-28 w-full">
+              <div className="relative w-full h-[420px] md:h-[500px] lg:h-[550px] rounded-[16px] border border-border/80 shadow-card overflow-hidden bg-bg-page">
+                <img
+                  src={faqImg}
+                  alt="Frequently Asked Questions"
+                  className="w-full h-full object-cover rounded-[16px]"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: FAQs */}
+          <div className="text-left w-full self-center">
+            <div className="space-y-4">
+              {customFaqs.map((faq, index) => (
+                <AccordionItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openIndex === index}
+                  onClick={() => handleToggle(index)}
+                />
+              ))}
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );
