@@ -60,12 +60,16 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${isScrolled
-          ? 'bg-white shadow-sm h-[70px]'
-          : 'bg-white/95 backdrop-blur-md h-[90px]'
+        className={`fixed left-1/2 -translate-x-1/2 z-40 backdrop-blur-md flex items-center justify-between header-transition ${isScrolled
+          ? 'top-4 w-[92%] max-w-6xl header-scrolled-active h-[76px]'
+          : 'top-0 w-full bg-white/40 border-b border-transparent h-[88px]'
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+        <div className={`h-full flex items-center justify-between w-full header-transition ${isScrolled
+          ? 'px-8 lg:px-12'
+          : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'
+          }`}
+        >
 
           {/* Logo Section */}
           <Link to="/" className="flex items-center flex-shrink-0">
@@ -172,7 +176,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-6">
             <Link
               to="/contact"
-              className="relative overflow-hidden group/btn bg-gold text-[#1A1A1A] font-bold text-base px-6 py-2.5 rounded-xl shadow-sm inline-flex items-center justify-center transition-all duration-500 z-10"
+              className="relative overflow-hidden group/btn bg-gold text-[#1A1A1A] font-black text-base px-8 py-3.5 rounded-xl shadow-md inline-flex items-center justify-center transition-all duration-500 z-10"
             >
               <span className="absolute inset-0 bg-primary transform -skew-x-12 -translate-x-[115%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-out -z-10" />
               <span className="relative z-10 flex items-center group-hover/btn:text-white transition-colors duration-300">

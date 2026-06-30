@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '../components/sections/HeroSection';
 import StatsStrip from '../components/sections/StatsStrip';
+import BankingPartners from '../components/sections/BankingPartners';
 import ServicesGrid from '../components/sections/ServicesGrid';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
 import HowItWorks from '../components/sections/HowItWorks';
@@ -19,29 +20,33 @@ export default function Home() {
       {/* 2. Stats Strip */}
       <StatsStrip />
 
-      {/* 3. Services Overview Grid */}
+      {/* 3. Banking Partners */}
+      <BankingPartners />
+
+      {/* 4. Services Overview Grid */}
       <ServicesGrid />
 
-      {/* 4. Why Choose Us */}
+      {/* 5. Why Choose Us */}
       <WhyChooseUs />
-
-      {/* 5. How It Works Timeline */}
-      <HowItWorks />
 
       {/* 6. Popular Services Tabs */}
       <ServicesTabs />
 
+      {/* 7. How It Works Timeline */}
+      <HowItWorks />
+
       {/* 8. Client Testimonials */}
       <Testimonials />
 
-      {/* 9. High-Priority CTA Banner */}
-      <CTABanner />
-
-      {/* 10. Frequently Asked Questions */}
+      {/* 9. Frequently Asked Questions */}
       <FAQSection />
 
-      {/* 11. Regional Branches (Our Locations) */}
+      {/* 10. Regional Branches (Our Locations) */}
       <Branches />
+
+      {/* 11. High-Priority CTA Banner */}
+      <CTABanner />
     </div>
   );
 }
+

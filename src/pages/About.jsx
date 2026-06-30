@@ -116,7 +116,33 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team / Roles */}
+      {/* Why Choose HK Finance (Value list) */}
+      <section className="bg-white py-[50px]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <SectionHeader
+            eyebrow="Our Promise"
+            title="How We Deliver Value"
+            subtitle="Our clients choose us for our transparency, speed, and dedicated CA support."
+            align="left"
+          />
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {valueList.map((val, i) => (
+              <div key={i} className="flex space-x-3 items-start p-4 bg-bg-page border border-border/80 rounded-2xl transition-all duration-300 hover:bg-white hover:border-primary/20 hover:shadow-md hover:-translate-y-0.5">
+                <ShieldCheck className="h-5.5 w-5.5 text-primary flex-shrink-0 mt-0.5" />
+                <div className="text-left">
+                  <h3 className="font-bold text-text-dark text-base">{val.title}</h3>
+                  <p className="text-sm text-text-muted mt-1 leading-relaxed">{val.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* Team / Roles (Our Experts) */}
       <section className="bg-white py-[50px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -140,32 +166,6 @@ export default function About() {
                 </div>
               );
             })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* Why Choose HK Finance (Value list) */}
-      <section className="bg-white py-[50px]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <SectionHeader
-            eyebrow="Our Promise"
-            title="How We Deliver Value"
-            subtitle="Our clients choose us for our transparency, speed, and dedicated CA support."
-            align="left"
-          />
-
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {valueList.map((val, i) => (
-              <div key={i} className="flex space-x-3 items-start p-4 bg-bg-page border border-border/80 rounded-2xl transition-all duration-300 hover:bg-white hover:border-primary/20 hover:shadow-md hover:-translate-y-0.5">
-                <ShieldCheck className="h-5.5 w-5.5 text-primary flex-shrink-0 mt-0.5" />
-                <div className="text-left">
-                  <h3 className="font-bold text-text-dark text-base">{val.title}</h3>
-                  <p className="text-sm text-text-muted mt-1 leading-relaxed">{val.desc}</p>
-                </div>
-              </div>
-            ))}
           </div>
 
         </div>

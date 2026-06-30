@@ -78,7 +78,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative bg-[#fafbf9] text-text-dark pt-24 pb-[100px] md:pt-28 md:pb-[100px] min-h-[85vh] lg:min-h-[calc(100vh-80px)] flex items-center overflow-hidden">
+    <section className="relative bg-[#fafbf9] text-text-dark pt-24 pb-[100px] md:pt-28 md:pb-[100px] min-h-[85vh] lg:min-h-[calc(100vh-80px)] lg:max-h-[820px] flex items-center overflow-hidden">
       
       {/* Background radial accent glow & tech grid pattern */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-40">

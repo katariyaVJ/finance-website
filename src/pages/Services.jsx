@@ -4,6 +4,7 @@ import { Search, SlidersHorizontal, ArrowRight } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import SectionHeader from '../components/ui/SectionHeader';
 import ServiceCard from '../components/cards/ServiceCard';
+import CTABanner from '../components/sections/CTABanner';
 import { serviceCategories, servicesData } from '../data/services';
 
 export default function Services() {
@@ -148,7 +149,7 @@ export default function Services() {
           <div className="lg:col-span-9 flex flex-col space-y-6">
 
             {/* Count Indicator */}
-            <div className="text-left text-sm text-text-muted font-semibold">
+            <div className="text-left text-base md:text-lg text-text-muted font-extrabold">
               Showing <span className="text-primary font-bold">{filteredServices.length}</span> services
               {selectedCategory !== 'all' && (
                 <> in <span className="text-primary font-bold">{serviceCategories[selectedCategory]?.title}</span></>
@@ -158,57 +159,21 @@ export default function Services() {
 
             {/* Services Grid */}
             {filteredServices.length > 0 ? (
-              selectedCategory === 'all' && !searchTerm ? (
-                <div className="space-y-14">
-                  {Object.values(serviceCategories).map((cat) => {
-                    const catServices = servicesData.filter((s) => s.category === cat.id);
-                    if (catServices.length === 0) return null;
-                    const CategoryIcon = Icons[cat.icon] || Icons.Building;
-                    return (
-                      <div key={cat.id} className="space-y-5">
-                        {/* Category Heading with Icon */}
-                        <div className="flex items-center space-x-3 pb-3 border-b border-border text-left">
-                          <div className="p-2.5 bg-primary-light text-primary rounded-xl flex-shrink-0">
-                            <CategoryIcon className="h-5 w-5" />
-                          </div>
-                          <h2 className="text-base md:text-lg font-extrabold text-text-dark font-display">
-                            {cat.title}
-                          </h2>
-                        </div>
-
-                        {/* Service Cards Grid inside Category */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                          {catServices.map((service) => (
-                            <ServiceCard
-                              key={service.slug}
-                              icon={cat.icon}
-                              title={service.name}
-                              description={service.description}
-                              href={`/services/${service.slug}`}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredServices.map((service) => (
-                    <ServiceCard
-                      key={service.slug}
-                      icon={
-                        selectedCategory !== 'all'
-                          ? serviceCategories[selectedCategory]?.icon
-                          : serviceCategories[service.category]?.icon
-                      }
-                      title={service.name}
-                      description={service.description}
-                      href={`/services/${service.slug}`}
-                    />
-                  ))}
-                </div>
-              )
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredServices.map((service) => (
+                  <ServiceCard
+                    key={service.slug}
+                    icon={
+                      selectedCategory !== 'all'
+                        ? serviceCategories[selectedCategory]?.icon
+                        : serviceCategories[service.category]?.icon
+                    }
+                    title={service.name}
+                    description={service.description}
+                    href={`/services/${service.slug}`}
+                  />
+                ))}
+              </div>
             ) : (
               <div className="p-10 md:p-16 bg-white rounded-2xl border border-border/80 text-center shadow-card max-w-xl mx-auto w-full relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-primary/20 via-primary to-gold/30" />
@@ -246,6 +211,9 @@ export default function Services() {
 
         </div>
       </section>
+
+      {/* High-Priority CTA Banner */}
+      <CTABanner />
 
     </div>
   );
